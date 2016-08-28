@@ -7,19 +7,25 @@
 //
 
 import UIKit
+import FontAwesome_swift
+import SnapKit
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        createView()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func createView() {
+        let label = UILabel()
+        label.font = UIFont.fontAwesomeOfSize(20)
+        label.text = String.fontAwesomeIconWithCode("fa-github")
+        label.textColor = UIColor.blueColor()
+        self.view.addSubview(label)
+        label.snp_makeConstraints { (make) -> Void in
+            make.center.equalTo(view)
+        }
     }
-
-
 }
 
