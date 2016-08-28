@@ -1,3 +1,0 @@
-# Bram
-
-Flashcard app

@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A6D296271D7331A200BF3F54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D296261D7331A200BF3F54 /* AppDelegate.swift */; };
+		A6D296291D7331A200BF3F54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D296281D7331A200BF3F54 /* ViewController.swift */; };
+		A6D2962C1D7331A200BF3F54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6D2962A1D7331A200BF3F54 /* Main.storyboard */; };
+		A6D2962F1D7331A200BF3F54 /* Bram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6D2962D1D7331A200BF3F54 /* Bram.xcdatamodeld */; };
+		A6D296311D7331A200BF3F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6D296301D7331A200BF3F54 /* Assets.xcassets */; };
+		A6D296341D7331A200BF3F54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6D296321D7331A200BF3F54 /* LaunchScreen.storyboard */; };
+		A6D2963F1D7331A200BF3F54 /* BramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D2963E1D7331A200BF3F54 /* BramTests.swift */; };
+		A6D2964A1D7331A200BF3F54 /* BramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D296491D7331A200BF3F54 /* BramUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A6D2963B1D7331A200BF3F54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6D2961B1D7331A100BF3F54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6D296221D7331A200BF3F54;
+			remoteInfo = Bram;
+		};
+		A6D296461D7331A200BF3F54 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A6D2961B1D7331A100BF3F54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A6D296221D7331A200BF3F54;
+			remoteInfo = Bram;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A6D296231D7331A200BF3F54 /* Bram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6D296261D7331A200BF3F54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A6D296281D7331A200BF3F54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A6D2962B1D7331A200BF3F54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A6D2962E1D7331A200BF3F54 /* Bram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bram.xcdatamodel; sourceTree = "<group>"; };
+		A6D296301D7331A200BF3F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A6D296331D7331A200BF3F54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A6D296351D7331A200BF3F54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6D2963A1D7331A200BF3F54 /* BramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6D2963E1D7331A200BF3F54 /* BramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BramTests.swift; sourceTree = "<group>"; };
+		A6D296401D7331A200BF3F54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6D296451D7331A200BF3F54 /* BramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A6D296491D7331A200BF3F54 /* BramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BramUITests.swift; sourceTree = "<group>"; };
+		A6D2964B1D7331A200BF3F54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A6D296201D7331A200BF3F54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6D296371D7331A200BF3F54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6D296421D7331A200BF3F54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A6D2961A1D7331A100BF3F54 = {
+			isa = PBXGroup;
+			children = (
+				A6D296251D7331A200BF3F54 /* Bram */,
+				A6D2963D1D7331A200BF3F54 /* BramTests */,
+				A6D296481D7331A200BF3F54 /* BramUITests */,
+				A6D296241D7331A200BF3F54 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A6D296241D7331A200BF3F54 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A6D296231D7331A200BF3F54 /* Bram.app */,
+				A6D2963A1D7331A200BF3F54 /* BramTests.xctest */,
+				A6D296451D7331A200BF3F54 /* BramUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A6D296251D7331A200BF3F54 /* Bram */ = {
+			isa = PBXGroup;
+			children = (
+				A6D296261D7331A200BF3F54 /* AppDelegate.swift */,
+				A6D296281D7331A200BF3F54 /* ViewController.swift */,
+				A6D2962A1D7331A200BF3F54 /* Main.storyboard */,
+				A6D296301D7331A200BF3F54 /* Assets.xcassets */,
+				A6D296321D7331A200BF3F54 /* LaunchScreen.storyboard */,
+				A6D296351D7331A200BF3F54 /* Info.plist */,
+				A6D2962D1D7331A200BF3F54 /* Bram.xcdatamodeld */,
+			);
+			path = Bram;
+			sourceTree = "<group>";
+		};
+		A6D2963D1D7331A200BF3F54 /* BramTests */ = {
+			isa = PBXGroup;
+			children = (
+				A6D2963E1D7331A200BF3F54 /* BramTests.swift */,
+				A6D296401D7331A200BF3F54 /* Info.plist */,
+			);
+			path = BramTests;
+			sourceTree = "<group>";
+		};
+		A6D296481D7331A200BF3F54 /* BramUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A6D296491D7331A200BF3F54 /* BramUITests.swift */,
+				A6D2964B1D7331A200BF3F54 /* Info.plist */,
+			);
+			path = BramUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A6D296221D7331A200BF3F54 /* Bram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6D2964E1D7331A200BF3F54 /* Build configuration list for PBXNativeTarget "Bram" */;
+			buildPhases = (
+				A6D2961F1D7331A200BF3F54 /* Sources */,
+				A6D296201D7331A200BF3F54 /* Frameworks */,
+				A6D296211D7331A200BF3F54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Bram;
+			productName = Bram;
+			productReference = A6D296231D7331A200BF3F54 /* Bram.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A6D296391D7331A200BF3F54 /* BramTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6D296511D7331A200BF3F54 /* Build configuration list for PBXNativeTarget "BramTests" */;
+			buildPhases = (
+				A6D296361D7331A200BF3F54 /* Sources */,
+				A6D296371D7331A200BF3F54 /* Frameworks */,
+				A6D296381D7331A200BF3F54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6D2963C1D7331A200BF3F54 /* PBXTargetDependency */,
+			);
+			name = BramTests;
+			productName = BramTests;
+			productReference = A6D2963A1D7331A200BF3F54 /* BramTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A6D296441D7331A200BF3F54 /* BramUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6D296541D7331A200BF3F54 /* Build configuration list for PBXNativeTarget "BramUITests" */;
+			buildPhases = (
+				A6D296411D7331A200BF3F54 /* Sources */,
+				A6D296421D7331A200BF3F54 /* Frameworks */,
+				A6D296431D7331A200BF3F54 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A6D296471D7331A200BF3F54 /* PBXTargetDependency */,
+			);
+			name = BramUITests;
+			productName = BramUITests;
+			productReference = A6D296451D7331A200BF3F54 /* BramUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A6D2961B1D7331A100BF3F54 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = GabrielGhe;
+				TargetAttributes = {
+					A6D296221D7331A200BF3F54 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					A6D296391D7331A200BF3F54 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = A6D296221D7331A200BF3F54;
+					};
+					A6D296441D7331A200BF3F54 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = A6D296221D7331A200BF3F54;
+					};
+				};
+			};
+			buildConfigurationList = A6D2961E1D7331A200BF3F54 /* Build configuration list for PBXProject "Bram" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A6D2961A1D7331A100BF3F54;
+			productRefGroup = A6D296241D7331A200BF3F54 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A6D296221D7331A200BF3F54 /* Bram */,
+				A6D296391D7331A200BF3F54 /* BramTests */,
+				A6D296441D7331A200BF3F54 /* BramUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A6D296211D7331A200BF3F54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6D296341D7331A200BF3F54 /* LaunchScreen.storyboard in Resources */,
+				A6D296311D7331A200BF3F54 /* Assets.xcassets in Resources */,
+				A6D2962C1D7331A200BF3F54 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6D296381D7331A200BF3F54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6D296431D7331A200BF3F54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A6D2961F1D7331A200BF3F54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6D296291D7331A200BF3F54 /* ViewController.swift in Sources */,
+				A6D2962F1D7331A200BF3F54 /* Bram.xcdatamodeld in Sources */,
+				A6D296271D7331A200BF3F54 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6D296361D7331A200BF3F54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6D2963F1D7331A200BF3F54 /* BramTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6D296411D7331A200BF3F54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A6D2964A1D7331A200BF3F54 /* BramUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A6D2963C1D7331A200BF3F54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6D296221D7331A200BF3F54 /* Bram */;
+			targetProxy = A6D2963B1D7331A200BF3F54 /* PBXContainerItemProxy */;
+		};
+		A6D296471D7331A200BF3F54 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A6D296221D7331A200BF3F54 /* Bram */;
+			targetProxy = A6D296461D7331A200BF3F54 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A6D2962A1D7331A200BF3F54 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6D2962B1D7331A200BF3F54 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A6D296321D7331A200BF3F54 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A6D296331D7331A200BF3F54 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A6D2964C1D7331A200BF3F54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A6D2964D1D7331A200BF3F54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A6D2964F1D7331A200BF3F54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Bram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GabrielGhe.Bram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A6D296501D7331A200BF3F54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Bram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GabrielGhe.Bram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A6D296521D7331A200BF3F54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BramTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GabrielGhe.BramTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bram.app/Bram";
+			};
+			name = Debug;
+		};
+		A6D296531D7331A200BF3F54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = BramTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GabrielGhe.BramTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Bram.app/Bram";
+			};
+			name = Release;
+		};
+		A6D296551D7331A200BF3F54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BramUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GabrielGhe.BramUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Bram;
+			};
+			name = Debug;
+		};
+		A6D296561D7331A200BF3F54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = BramUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.GabrielGhe.BramUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Bram;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A6D2961E1D7331A200BF3F54 /* Build configuration list for PBXProject "Bram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6D2964C1D7331A200BF3F54 /* Debug */,
+				A6D2964D1D7331A200BF3F54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6D2964E1D7331A200BF3F54 /* Build configuration list for PBXNativeTarget "Bram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6D2964F1D7331A200BF3F54 /* Debug */,
+				A6D296501D7331A200BF3F54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A6D296511D7331A200BF3F54 /* Build configuration list for PBXNativeTarget "BramTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6D296521D7331A200BF3F54 /* Debug */,
+				A6D296531D7331A200BF3F54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A6D296541D7331A200BF3F54 /* Build configuration list for PBXNativeTarget "BramUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A6D296551D7331A200BF3F54 /* Debug */,
+				A6D296561D7331A200BF3F54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A6D2962D1D7331A200BF3F54 /* Bram.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A6D2962E1D7331A200BF3F54 /* Bram.xcdatamodel */,
+			);
+			currentVersion = A6D2962E1D7331A200BF3F54 /* Bram.xcdatamodel */;
+			path = Bram.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A6D2961B1D7331A100BF3F54 /* Project object */;
+}

@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Bram.xcscheme_^#shared#^_</key>
+		<key>Bram.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>00E356ED1AD99517003FC87E</key>
+		<key>A6D296221D7331A200BF3F54</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>13B07F861A680F5B00A75B9A</key>
+		<key>A6D296391D7331A200BF3F54</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A6D296441D7331A200BF3F54</key>
 		<dict>
 			<key>primary</key>
 			<true/>
