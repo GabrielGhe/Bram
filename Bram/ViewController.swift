@@ -9,6 +9,7 @@
 import UIKit
 import FontAwesome_swift
 import SnapKit
+import SwiftPriorityQueue
 
 class ViewController: UIViewController {
 
@@ -26,6 +27,28 @@ class ViewController: UIViewController {
         label.snp_makeConstraints { (make) -> Void in
             make.center.equalTo(view)
         }
+        
+        let card1 = Card.Builder()
+            .setId("1234")
+            .setQuestion("question 1")
+            .setAnswer("answer 1")
+            .build()
+        
+        let card2 = Card.Builder()
+            .setId("2345")
+            .setQuestion("question 2")
+            .setAnswer("answer 2")
+            .setDateToShow(NSDate().addDays(1))
+            .build()
+        
+        var queue = PriorityQueue<Card>(ascending: false)
+        
+        queue.push(card1)
+        queue.push(card2)
+        
+        print(queue.peek() == card1)
+        
+        print(card1 > card2)
     }
 }
 
