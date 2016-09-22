@@ -1,13 +1,16 @@
 PODS:
   - FontAwesome.swift (0.8.0)
   - SnapKit (0.15.0)
+  - SwiftPriorityQueue (1.1.1)
 
 DEPENDENCIES:
   - FontAwesome.swift
   - SnapKit (~> 0.15.0)
+  - SwiftPriorityQueue
 
 SPEC CHECKSUMS:
   FontAwesome.swift: f8c6cc5c42cbe93bdc04371363bc7b371fb3d3a1
   SnapKit: 4962eed2ee18e48cbd2b2292fffc57efe7235f87
+  SwiftPriorityQueue: cced1a141ab3cdbbd00fe1ec3b831c69a54cc2fd
 
 COCOAPODS: 0.39.0
