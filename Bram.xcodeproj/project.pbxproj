@@ -17,6 +17,7 @@
 		A6D296341D7331A200BF3F54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6D296321D7331A200BF3F54 /* LaunchScreen.storyboard */; };
 		A6D2963F1D7331A200BF3F54 /* BramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D2963E1D7331A200BF3F54 /* BramTests.swift */; };
 		A6D2964A1D7331A200BF3F54 /* BramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D296491D7331A200BF3F54 /* BramUITests.swift */; };
+		A6DB0F9B1D991F6400988B1B /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DB0F9A1D991F6400988B1B /* Deck.swift */; };
 		DF5FABAE304F9B6DAF5EBF3D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95A411BBDAB8978911C54BD /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		A6D296451D7331A200BF3F54 /* BramUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BramUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D296491D7331A200BF3F54 /* BramUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BramUITests.swift; sourceTree = "<group>"; };
 		A6D2964B1D7331A200BF3F54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A6DB0F9A1D991F6400988B1B /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		D95A411BBDAB8978911C54BD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,6 +121,7 @@
 				A6D2962D1D7331A200BF3F54 /* Bram.xcdatamodeld */,
 				A6732A351D93B978002AAB60 /* Card.swift */,
 				A6732A371D93C4DA002AAB60 /* DateExtension.swift */,
+				A6DB0F9A1D991F6400988B1B /* Deck.swift */,
 			);
 			path = Bram;
 			sourceTree = "<group>";
@@ -340,6 +343,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6DB0F9B1D991F6400988B1B /* Deck.swift in Sources */,
 				A6D296291D7331A200BF3F54 /* ViewController.swift in Sources */,
 				A6732A381D93C4DA002AAB60 /* DateExtension.swift in Sources */,
 				A6D2962F1D7331A200BF3F54 /* Bram.xcdatamodeld in Sources */,
