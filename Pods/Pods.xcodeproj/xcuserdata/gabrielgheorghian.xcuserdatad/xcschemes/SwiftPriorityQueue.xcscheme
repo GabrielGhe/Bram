@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '62899217680AF40DE2F72733'
+               BlueprintIdentifier = '6AE8CEF82E28665A6878EBC7'
                BlueprintName = 'SwiftPriorityQueue'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'SwiftPriorityQueue.framework'>

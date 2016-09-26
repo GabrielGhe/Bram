@@ -86,6 +86,33 @@ public struct PriorityQueue<T: Comparable> {
         return temp
     }
     
+    
+    /// Removes the first occurence of a particular item. Finds it by value comparison using ==. O(n)
+    /// Silently exits if no occurrence found.
+    ///
+    /// - parameter item: The item to remove the first occurrence of.
+    public mutating func remove(_ item: T) {
+        if let index = heap.indexOf(item) {
+            swap(&heap[index], &heap[heap.count - 1])
+            heap.removeLast()
+            swim(index)
+            sink(index)
+        }
+    }
+    
+    /// Removes all occurences of a particular item. Finds it by value comparison using ==. O(n)
+    /// Silently exits if no occurrence found.
+    ///
+    /// - parameter item: The item to remove.
+    public mutating func removeAll(_ item: T) {
+        var lastCount = heap.count
+        remove(item)
+        while (heap.count < lastCount) {
+            lastCount = heap.count
+            remove(item)
+        }
+    }
+    
     /// Get a look at the current highest priority item, without removing it. O(1)
     ///
     /// - returns: The element with the highest priority in the PriorityQueue, or nil if the PriorityQueue is empty.
@@ -152,9 +179,9 @@ extension PriorityQueue: Collection {
     public subscript(i: Int) -> T { return heap[i] }
     
     #if swift(>=3.0)
-        public func index(after i: PriorityQueue.Index) -> PriorityQueue.Index {
-            return heap.index(after: i)
-        }
+    public func index(after i: PriorityQueue.Index) -> PriorityQueue.Index {
+    return heap.index(after: i)
+    }
     #endif
 }
 
