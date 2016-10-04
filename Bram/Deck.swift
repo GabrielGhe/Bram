@@ -12,15 +12,16 @@ import SwiftPriorityQueue
 class Deck {
     private var mQueue: PriorityQueue<Card>
     private let mName: String
-    private let uuid: String
+    private let mId: String
     
     convenience init(name: String) {
         self.init(name, [], UUID().uuidString)
     }
     
-    init(_ name: String, _ cards: [Card]) {
+    init(_ name: String, _ cards: [Card], uuid: String) {
         self.mName = name
         self.mQueue = PriorityQueue<Card>(ascending: false)
+        self.mId = uuid
         addCards(cards)
     }
     

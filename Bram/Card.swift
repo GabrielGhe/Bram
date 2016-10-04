@@ -12,8 +12,8 @@ public class Card {
     private var mId: String
     private var mQuestion: String
     private var mAnswer: String
-    private var mCreateDate: NSDate
-    private var mAssociatedCards: [String]
+    private var mCreationDate: NSDate
+    private var mAssociatedCardIds: [String]
     private var mDateToShow: NSDate
     
     private init(id:String, question:String, answer:String,
@@ -21,25 +21,49 @@ public class Card {
         self.mId = id
         self.mQuestion = question
         self.mAnswer = answer
-        self.mCreateDate = NSDate()
+        self.mCreationDate = NSDate()
         self.mDateToShow = dateToShow
-        self.mAssociatedCards = associatedCards
+        self.mAssociatedCardIds = associatedCards
+    }
+    
+    func getId() -> String {
+        return self.mId
+    }
+    
+    func getQuestion() -> String {
+        return self.mQuestion
+    }
+    
+    func getAnswer() -> String {
+        return self.mAnswer
+    }
+    
+    func getCreationDate() -> NSDate {
+        return self.mCreationDate
+    }
+    
+    func getDateToShow() -> NSDate {
+        return self.mDateToShow
+    }
+    
+    func getAssociatedCardIds() -> [String] {
+        return self.getAssociatedCardIds()
     }
     
     class Builder {
         private var mId: String
         private var mQuestion: String
         private var mAnswer: String
-        private var mCreateDate: NSDate
+        private var mCreationDate: NSDate
         private var mAssociatedCards: [String]
         private var mDateToShow: NSDate
         
         init() {
-            mId = "" //generate new id
+            mId = UUID().uuidString
             mQuestion = ""
             mAnswer = ""
             mAssociatedCards = []
-            mCreateDate = NSDate()
+            mCreationDate = NSDate()
             mDateToShow = NSDate()
         }
         
@@ -58,8 +82,8 @@ public class Card {
             return self
         }
         
-        func setCreateDate(createDate: NSDate) -> Card.Builder {
-            self.mCreateDate = createDate
+        func setCreationDate(creationDate: NSDate) -> Card.Builder {
+            self.mCreationDate = creationDate
             return self
         }
         
@@ -73,8 +97,17 @@ public class Card {
             return self
         }
         
+        func copyCard(otherCard: Card) -> Card.Builder {
+            self.mId = otherCard.getId()
+            self.mQuestion = otherCard.getQuestion()
+            self.mAnswer = otherCard.getAnswer()
+            self.mAssociatedCards = otherCard.getAssociatedCardIds()
+            self.mCreationDate = otherCard.getCreationDate()
+            self.mDateToShow = otherCard.getDateToShow()
+        }
+        
         func build() -> Card {
-            return Card(id: mId, question: mQuestion, answer: mAnswer, creationDate: mCreateDate, associatedCards: mAssociatedCards, dateToShow: mDateToShow)
+            return Card(id: mId, question: mQuestion, answer: mAnswer, creationDate: mCreationDate, associatedCards: mAssociatedCards, dateToShow: mDateToShow)
         }
     }
 }
