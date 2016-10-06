@@ -25,9 +25,9 @@
 // This code was inspired by Section 2.4 of Algorithms by Sedgewick & Wayne, 4th Edition
 
 #if !swift(>=3.0)
-    typealias IteratorProtocol = GeneratorType
-    typealias Sequence = SequenceType
-    typealias Collection = CollectionType
+    typealias IteratorProtocol = Swift.IteratorProtocol
+    typealias Sequence = Swift.Sequence
+    typealias Collection = Swift.Collection
 #endif
 
 /// A PriorityQueue takes objects to be pushed of any type that implements Comparable.
@@ -37,8 +37,8 @@
 /// at the time of initialization.
 public struct PriorityQueue<T: Comparable> {
     
-    private var heap = [T]()
-    private let ordered: (T, T) -> Bool
+    fileprivate var heap = [T]()
+    fileprivate let ordered: (T, T) -> Bool
     
     public init(ascending: Bool = false, startingValues: [T] = []) {
         
@@ -92,7 +92,7 @@ public struct PriorityQueue<T: Comparable> {
     ///
     /// - parameter item: The item to remove the first occurrence of.
     public mutating func remove(_ item: T) {
-        if let index = heap.indexOf(item) {
+        if let index = heap.index(of: item) {
             swap(&heap[index], &heap[heap.count - 1])
             heap.removeLast()
             swim(index)
@@ -125,12 +125,12 @@ public struct PriorityQueue<T: Comparable> {
         #if swift(>=3.0)
             heap.removeAll(keepingCapacity: false)
         #else
-            heap.removeAll(keepCapacity: false)
+            heap.removeAll(keepingCapacity: false)
         #endif
     }
     
     // Based on example from Sedgewick p 316
-    private mutating func sink(_ index: Int) {
+    fileprivate mutating func sink(_ index: Int) {
         var index = index
         while 2 * index + 1 < heap.count {
             
@@ -145,7 +145,7 @@ public struct PriorityQueue<T: Comparable> {
     }
     
     // Based on example from Sedgewick p 316
-    private mutating func swim(_ index: Int) {
+    fileprivate mutating func swim(_ index: Int) {
         var index = index
         while index > 0 && ordered(heap[(index - 1) / 2], heap[index]) {
             swap(&heap[(index - 1) / 2], &heap[index])

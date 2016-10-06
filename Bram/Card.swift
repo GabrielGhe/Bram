@@ -8,20 +8,20 @@
 
 import UIKit
 
-public class Card {
-    private var mId: String
-    private var mQuestion: String
-    private var mAnswer: String
-    private var mCreationDate: NSDate
-    private var mAssociatedCardIds: [String]
-    private var mDateToShow: NSDate
+open class Card {
+    fileprivate var mId: String
+    fileprivate var mQuestion: String
+    fileprivate var mAnswer: String
+    fileprivate var mCreationDate: Date
+    fileprivate var mAssociatedCardIds: [String]
+    fileprivate var mDateToShow: Date
     
-    private init(id:String, question:String, answer:String,
-                 creationDate: NSDate, associatedCards: [String], dateToShow: NSDate) {
+    fileprivate init(id:String, question:String, answer:String,
+                 creationDate: Date, associatedCards: [String], dateToShow: Date) {
         self.mId = id
         self.mQuestion = question
         self.mAnswer = answer
-        self.mCreationDate = NSDate()
+        self.mCreationDate = Date()
         self.mDateToShow = dateToShow
         self.mAssociatedCardIds = associatedCards
     }
@@ -38,11 +38,11 @@ public class Card {
         return self.mAnswer
     }
     
-    func getCreationDate() -> NSDate {
+    func getCreationDate() -> Date {
         return self.mCreationDate
     }
     
-    func getDateToShow() -> NSDate {
+    func getDateToShow() -> Date {
         return self.mDateToShow
     }
     
@@ -51,59 +51,60 @@ public class Card {
     }
     
     class Builder {
-        private var mId: String
-        private var mQuestion: String
-        private var mAnswer: String
-        private var mCreationDate: NSDate
-        private var mAssociatedCards: [String]
-        private var mDateToShow: NSDate
+        fileprivate var mId: String
+        fileprivate var mQuestion: String
+        fileprivate var mAnswer: String
+        fileprivate var mCreationDate: Date
+        fileprivate var mAssociatedCards: [String]
+        fileprivate var mDateToShow: Date
         
         init() {
             mId = UUID().uuidString
             mQuestion = ""
             mAnswer = ""
             mAssociatedCards = []
-            mCreationDate = NSDate()
-            mDateToShow = NSDate()
+            mCreationDate = Date()
+            mDateToShow = Date()
         }
         
-        func setId(id: String) -> Card.Builder  {
+        func setId(_ id: String) -> Card.Builder  {
             self.mId = id
             return self
         }
         
-        func setQuestion(question: String) -> Card.Builder {
+        func setQuestion(_ question: String) -> Card.Builder {
             self.mQuestion = question
             return self
         }
         
-        func setAnswer(answer: String) -> Card.Builder {
+        func setAnswer(_ answer: String) -> Card.Builder {
             self.mAnswer = answer
             return self
         }
         
-        func setCreationDate(creationDate: NSDate) -> Card.Builder {
+        func setCreationDate(_ creationDate: Date) -> Card.Builder {
             self.mCreationDate = creationDate
             return self
         }
         
-        func setAssociatedCards(associatedCards: [String]) -> Card.Builder {
+        func setAssociatedCards(_ associatedCards: [String]) -> Card.Builder {
             self.mAssociatedCards = associatedCards
             return self
         }
         
-        func setDateToShow(dateToShow: NSDate) -> Card.Builder {
+        func setDateToShow(_ dateToShow: Date) -> Card.Builder {
             self.mDateToShow = dateToShow
             return self
         }
         
-        func copyCard(otherCard: Card) -> Card.Builder {
+        func copyCard(_ otherCard: Card) -> Card.Builder {
             self.mId = otherCard.getId()
             self.mQuestion = otherCard.getQuestion()
             self.mAnswer = otherCard.getAnswer()
             self.mAssociatedCards = otherCard.getAssociatedCardIds()
             self.mCreationDate = otherCard.getCreationDate()
             self.mDateToShow = otherCard.getDateToShow()
+            return self
         }
         
         func build() -> Card {
@@ -116,7 +117,7 @@ extension Card : Equatable {}
 extension Card : Comparable {}
 
 public func ==(left: Card, right: Card) -> Bool {
-    return left.mDateToShow.isEqualToDate(right.mDateToShow)
+    return (left.mDateToShow == right.mDateToShow)
 }
 
 public func <(left: Card, right: Card) -> Bool {

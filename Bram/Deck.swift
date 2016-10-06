@@ -10,12 +10,12 @@ import UIKit
 import SwiftPriorityQueue
 
 class Deck {
-    private var mQueue: PriorityQueue<Card>
-    private let mName: String
-    private let mId: String
+    fileprivate var mQueue: PriorityQueue<Card>
+    fileprivate let mName: String
+    fileprivate let mId: String
     
     convenience init(name: String) {
-        self.init(name, [], UUID().uuidString)
+        self.init(name, [], uuid: UUID().uuidString)
     }
     
     init(_ name: String, _ cards: [Card], uuid: String) {
@@ -25,15 +25,15 @@ class Deck {
         addCards(cards)
     }
     
-    func addCard(card: Card) {
+    func addCard(_ card: Card) {
         addCards([card])
     }
     
-    func deleteCard(card: Card) {
+    func deleteCard(_ card: Card) {
         mQueue.remove(card)
     }
     
-    private func addCards(cards: [Card]) {
+    fileprivate func addCards(_ cards: [Card]) {
         for card in cards {
             mQueue.push(card)
         }
