@@ -13,15 +13,17 @@ class Deck {
     fileprivate var mQueue: PriorityQueue<Card>
     fileprivate let mName: String
     fileprivate let mId: String
+    fileprivate let mCardsPerDay: Int
     
     convenience init(name: String) {
-        self.init(name, [], uuid: UUID().uuidString)
+        self.init(name, [], uuid: UUID().uuidString, cardsPerDay: 10)
     }
     
-    init(_ name: String, _ cards: [Card], uuid: String) {
+    init(_ name: String, _ cards: [Card], uuid: String, cardsPerDay: Int) {
+        self.mId = uuid
         self.mName = name
         self.mQueue = PriorityQueue<Card>(ascending: false)
-        self.mId = uuid
+        self.mCardsPerDay = cardsPerDay
         addCards(cards)
     }
     
@@ -33,9 +35,30 @@ class Deck {
         mQueue.remove(card)
     }
     
-    fileprivate func addCards(_ cards: [Card]) {
+    func addCards(_ cards: [Card]) {
         for card in cards {
             mQueue.push(card)
         }
+    }
+    
+    func getCardsDue() -> [Card] {
+        var cardsDue:[Card] = []
+        var ctr = 0
+        var gen = mQueue.makeIterator()
+        var current = gen.next()
+        
+        while current != nil && ctr < mCardsPerDay {
+            if let current = current {
+                if Date.isSmallerThan(current.getDateToShow(), Date()) {
+                    cardsDue.append(current)
+                } else {
+                    break
+                }
+            }
+            ctr += 1
+            current = gen.next()
+        }
+        
+        return cardsDue
     }
 }

@@ -9,6 +9,15 @@
 import UIKit
 
 extension Date {
+    static func isSmallerThan(_ date1: Date, _ date2: Date, byDays days: Int = 1) -> Bool {
+        let timeInterval = date1.timeIntervalSince(date2)
+        return Int(timeInterval) <= Date.daysToSeconds(days)
+    }
+    
+    static func daysToSeconds(_ days: Int) -> Int {
+        return days * 86400
+    }
+    
     func isGreaterThanDate(_ dateToCompare: Date) -> Bool {
         //Declare Variables
         var isGreater = false

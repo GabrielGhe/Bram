@@ -18,6 +18,9 @@
 		A6D2963F1D7331A200BF3F54 /* BramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D2963E1D7331A200BF3F54 /* BramTests.swift */; };
 		A6D2964A1D7331A200BF3F54 /* BramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D296491D7331A200BF3F54 /* BramUITests.swift */; };
 		A6DB0F9B1D991F6400988B1B /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DB0F9A1D991F6400988B1B /* Deck.swift */; };
+		A6F7FC471DAA9B9C00D689BE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A371D93C4DA002AAB60 /* DateExtension.swift */; };
+		A6F7FC491DAA9C3C00D689BE /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DB0F9A1D991F6400988B1B /* Deck.swift */; };
+		A6F7FC4A1DAA9C3F00D689BE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A351D93B978002AAB60 /* Card.swift */; };
 		DF5FABAE304F9B6DAF5EBF3D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D95A411BBDAB8978911C54BD /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -359,7 +362,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6F7FC491DAA9C3C00D689BE /* Deck.swift in Sources */,
 				A6D2963F1D7331A200BF3F54 /* BramTests.swift in Sources */,
+				A6F7FC471DAA9B9C00D689BE /* DateExtension.swift in Sources */,
+				A6F7FC4A1DAA9C3F00D689BE /* Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
