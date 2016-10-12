@@ -41,7 +41,7 @@ class Deck {
         }
     }
     
-    func getCardsDue() -> [Card] {
+    func getCardsDue(_ date: Date = Date()) -> [Card] {
         var cardsDue:[Card] = []
         var ctr = 0
         var gen = mQueue.makeIterator()
@@ -49,7 +49,7 @@ class Deck {
         
         while current != nil && ctr < mCardsPerDay {
             if let current = current {
-                if Date.isSmallerThan(current.getDateToShow(), Date()) {
+                if Date.isSmallerThan(current.getDateToShow(), date) {
                     cardsDue.append(current)
                 } else {
                     break
@@ -57,6 +57,31 @@ class Deck {
             }
             ctr += 1
             current = gen.next()
+        }
+        
+        return cardsDue
+    }
+    
+    func removeCardsDue(_ date: Date = Date()) -> [Card] {
+        var cardsDue:[Card] = []
+        var ctr = 0
+        
+        if mQueue.isEmpty {
+            return []
+        }
+        
+        var current = mQueue.peek()
+        
+        while !mQueue.isEmpty && ctr < mCardsPerDay {
+            let onSameDay = Date.isSameDay(current!.getDateToShow(), date)
+            let onPastDay = Date.isPastDay(current!.getDateToShow(), date)
+            if current != nil && (onSameDay || onPastDay) {
+                cardsDue.append(mQueue.pop()!)
+            } else {
+                break
+            }
+            ctr += 1
+            current = mQueue.peek()
         }
         
         return cardsDue

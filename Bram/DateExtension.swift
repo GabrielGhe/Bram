@@ -18,6 +18,14 @@ extension Date {
         return days * 86400
     }
     
+    static func isSameDay(_ date1: Date, _ date2: Date) -> Bool {
+        return NSCalendar.current.isDate(date1, inSameDayAs: date2)
+    }
+    
+    static func isPastDay(_ date1: Date, _ date2: Date) -> Bool {
+        return date1.isLessThanDate(date2)
+    }
+    
     func isGreaterThanDate(_ dateToCompare: Date) -> Bool {
         //Declare Variables
         var isGreater = false
