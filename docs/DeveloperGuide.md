@@ -83,7 +83,6 @@ Priority | As a ... | I want to ... | So that I can...
 `* * *` | user | search my list | find a mem that I'm looking for in an easier manner
 `* * *` | user | edit a list | update the details of that specific list
 `* * *` | user | edit a mem | update the details of that specific mem
-`* * *` | user | share my list with someone else | help them learn too
 `* *` | user | add tags to a mem | to search for that mem easier
 `* *` | user | create a new mem from an old one | to make mems easier
 `* *` | user | save an image to a mem | visualize the mem easier
@@ -91,6 +90,7 @@ Priority | As a ... | I want to ... | So that I can...
 `*` | user | save audio to a mem | remind myself of the mem by hearing
 `*` | user | see the progress of a list | see how much I have improved
 `*` | user | see the progress of a mem | see how much I have improved
+`*` | user | share my list with someone else | help them learn too
 
 {More to be added}
 
