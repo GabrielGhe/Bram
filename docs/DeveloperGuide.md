@@ -76,7 +76,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have)  - `* *`,  Low (un
 
 Priority | As a ... | I want to ... | So that I can...
 -------- | :-------- | :--------- | :-----------
-`* * *` | new user | see usage instructions | refer to instructions when I forget how to use the App
 `* * *` | user | create a new list | record mem that ‘some day’ I can store in my long term memory
 `* * *` | user | delete a list | that I don't need anymore
 `* * *` | user | create a mem inside a list | be reminded of it `some day`
@@ -88,6 +87,7 @@ Priority | As a ... | I want to ... | So that I can...
 `* *` | user | add tags to a mem | to search for that mem easier
 `* *` | user | create a new mem from an old one | to make mems easier
 `* *` | user | save an image to a mem | visualize the mem easier
+`*` | new user | see usage instructions | refer to instructions when I forget how to use the App
 `*` | user | save audio to a mem | remind myself of the mem by hearing
 `*` | user | see the progress of a list | see how much I have improved
 `*` | user | see the progress of a mem | see how much I have improved
