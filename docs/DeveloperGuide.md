@@ -156,6 +156,11 @@ Use case ends.
 
 > 2a1. 
 
+## Appendix C : Non Functional Requirements
+
+1. People should struggle. Example remembering "leaf / tree" vs remembering "river / b_at"
+<img src="images/struggle.jpg" width="800"><br>
+
 ## Appendix D : Glossary
 
 #####  mem
