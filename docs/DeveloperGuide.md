@@ -158,8 +158,18 @@ Use case ends.
 
 ## Appendix C : Non Functional Requirements
 
-1. People should struggle. Example remembering "leaf / tree" vs remembering "river / b_at"
+1. People should struggle. 
+- Example remembering "leaf / tree" vs remembering "river / b_at"
 <img src="images/struggle.png" width="500"><br>
+
+- When you can't remember a person's name... Figuring it out on your own vs someone telling you.
+
+2. Making mistakes makes you smarter. (Experiences where you have to slow down, make errors and correct them end up making you better.
+
+3. Testing is more important than observations
+
+4. 
+
 
 ## Appendix D : Glossary
 
