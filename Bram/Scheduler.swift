@@ -42,7 +42,7 @@ class Scheduler {
         
     }
     
-    func addCardDues(_ cardDues: [CardDue]) {g
+    func addCardDues(_ cardDues: [CardDue]) {
         
     }
     
