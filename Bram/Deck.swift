@@ -7,23 +7,30 @@
 //
 
 import UIKit
-import SwiftPriorityQueue
 
 class Deck {
-    fileprivate var mQueue: PriorityQueue<Card>
-    fileprivate let mName: String
-    fileprivate let mId: String
-    fileprivate let mCardsPerDay: Int
+    fileprivate var cardMap: [String:Card]
+    private(set) var name: String
+    private(set) var deckId: String
+    private(set) var cardsPerDay: Int
     
-    convenience init(name: String) {
-        self.init(name, [], uuid: UUID().uuidString, cardsPerDay: 10)
+    public var cardIds: [String]{
+        return cardMap.keys.sorted()
     }
     
-    init(_ name: String, _ cards: [Card], uuid: String, cardsPerDay: Int) {
-        self.mId = uuid
-        self.mName = name
-        self.mQueue = PriorityQueue<Card>(ascending: false)
-        self.mCardsPerDay = cardsPerDay
+    public var cards: [Card] {
+        return cardMap.values.sorted()
+    }
+    
+    convenience init(name: String) {
+        self.init(deckId: UUID().uuidString, name: name, cards: [], cardsPerDay: 10)
+    }
+    
+    init(deckId: String, name: String, cards: [Card], cardsPerDay: Int) {
+        self.deckId = deckId
+        self.name = name
+        self.cardsPerDay = cardsPerDay
+        self.cardMap = [:]
         addCards(cards)
     }
     
@@ -32,58 +39,16 @@ class Deck {
     }
     
     func deleteCard(_ card: Card) {
-        mQueue.remove(card)
+        var cardRemoved = cardMap.removeValue(forKey: card.cardId)
+    }
+    
+    func updateCard(_ card: Card) {
+        self.cardMap.updateValue(card, forKey: card.cardId)
     }
     
     func addCards(_ cards: [Card]) {
         for card in cards {
-            mQueue.push(card)
+            self.cardMap[card.cardId] = card
         }
-    }
-    
-    func getCardsDue(_ date: Date = Date()) -> [Card] {
-        var cardsDue:[Card] = []
-        var ctr = 0
-        var gen = mQueue.makeIterator()
-        var current = gen.next()
-        
-        while current != nil && ctr < mCardsPerDay {
-            if let current = current {
-                if Date.isSmallerThan(current.getDateToShow(), date) {
-                    cardsDue.append(current)
-                } else {
-                    break
-                }
-            }
-            ctr += 1
-            current = gen.next()
-        }
-        
-        return cardsDue
-    }
-    
-    func removeCardsDue(_ date: Date = Date()) -> [Card] {
-        var cardsDue:[Card] = []
-        var ctr = 0
-        
-        if mQueue.isEmpty {
-            return []
-        }
-        
-        var current = mQueue.peek()
-        
-        while !mQueue.isEmpty && ctr < mCardsPerDay {
-            let onSameDay = Date.isSameDay(current!.getDateToShow(), date)
-            let onPastDay = Date.isPastDay(current!.getDateToShow(), date)
-            if current != nil && (onSameDay || onPastDay) {
-                cardsDue.append(mQueue.pop()!)
-            } else {
-                break
-            }
-            ctr += 1
-            current = mQueue.peek()
-        }
-        
-        return cardsDue
     }
 }

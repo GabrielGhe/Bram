@@ -9,120 +9,109 @@
 import UIKit
 
 open class Card {
-    fileprivate var mId: String
-    fileprivate var mQuestion: String
-    fileprivate var mAnswer: String
-    fileprivate var mCreationDate: Date
-    fileprivate var mAssociatedCardIds: [String]
-    fileprivate var mDateToShow: Date
-    fileprivate var mDaysToWait: Int
+    private(set) var cardId: String
+    private(set) var deckId: String
+    private(set) var question: String
+    private(set) var answer: String
+    private(set) var creationDate: Date
+    private(set) var associatedCardIds: [String]
+    private(set) var dateToShow: Date
+    private(set) var daysToWait: Int
     
-    fileprivate init(id:String, question:String, answer:String,
+    fileprivate init(cardId:String, deckId:String, question:String, answer:String,
                      creationDate: Date, associatedCards: [String], dateToShow: Date, daysToWait: Int) {
-        self.mId = id
-        self.mQuestion = question
-        self.mAnswer = answer
-        self.mCreationDate = Date()
-        self.mDateToShow = dateToShow
-        self.mAssociatedCardIds = associatedCards
-        self.mDaysToWait = daysToWait
-    }
-    
-    func getId() -> String {
-        return self.mId
-    }
-    
-    func getQuestion() -> String {
-        return self.mQuestion
-    }
-    
-    func getAnswer() -> String {
-        return self.mAnswer
-    }
-    
-    func getCreationDate() -> Date {
-        return self.mCreationDate
-    }
-    
-    func getDateToShow() -> Date {
-        return self.mDateToShow
-    }
-    
-    func getAssociatedCardIds() -> [String] {
-        return self.mAssociatedCardIds
-    }
-    
-    func getDaysToWait() -> Int {
-        return self.mDaysToWait
+        self.cardId = cardId
+        self.deckId = deckId
+        self.question = question
+        self.answer = answer
+        self.creationDate = Date()
+        self.dateToShow = dateToShow
+        self.associatedCardIds = associatedCards
+        self.daysToWait = daysToWait
     }
     
     class Builder {
-        fileprivate var mId: String
-        fileprivate var mQuestion: String
-        fileprivate var mAnswer: String
-        fileprivate var mCreationDate: Date
-        fileprivate var mAssociatedCards: [String]
-        fileprivate var mDateToShow: Date
-        fileprivate var mDaysToWait: Int
+        fileprivate var cardId: String
+        fileprivate var deckId: String
+        fileprivate var question: String
+        fileprivate var answer: String
+        fileprivate var creationDate: Date
+        fileprivate var associatedCards: [String]
+        fileprivate var dateToShow: Date
+        fileprivate var daysToWait: Int
         
         init() {
-            mId = UUID().uuidString
-            mQuestion = ""
-            mAnswer = ""
-            mAssociatedCards = []
-            mCreationDate = Date()
-            mDateToShow = Date()
-            mDaysToWait = 1
+            cardId = UUID().uuidString
+            deckId = UUID().uuidString
+            question = ""
+            answer = ""
+            associatedCards = []
+            creationDate = Date()
+            dateToShow = Date()
+            daysToWait = 1
         }
         
-        func setId(_ id: String) -> Card.Builder  {
-            self.mId = id
+        func setCardId(_ id: String) -> Card.Builder  {
+            self.cardId = id
+            return self
+        }
+        
+        func setDeckId(_ id: String) -> Card.Builder  {
+            self.deckId = id
             return self
         }
         
         func setQuestion(_ question: String) -> Card.Builder {
-            self.mQuestion = question
+            self.question = question
             return self
         }
         
         func setAnswer(_ answer: String) -> Card.Builder {
-            self.mAnswer = answer
+            self.answer = answer
             return self
         }
         
         func setCreationDate(_ creationDate: Date) -> Card.Builder {
-            self.mCreationDate = creationDate
+            self.creationDate = creationDate
             return self
         }
         
         func setAssociatedCards(_ associatedCards: [String]) -> Card.Builder {
-            self.mAssociatedCards = associatedCards
+            self.associatedCards = associatedCards
             return self
         }
         
         func setDateToShow(_ dateToShow: Date) -> Card.Builder {
-            self.mDateToShow = dateToShow
+            self.dateToShow = dateToShow
             return self
         }
         
         func setDaysToWait(_ daysToWait: Int) -> Card.Builder {
-            self.mDaysToWait = daysToWait
+            self.daysToWait = daysToWait
             return self
         }
         
         func setCard(_ otherCard: Card) -> Card.Builder {
-            self.mId = otherCard.getId()
-            self.mQuestion = otherCard.getQuestion()
-            self.mAnswer = otherCard.getAnswer()
-            self.mAssociatedCards = otherCard.getAssociatedCardIds()
-            self.mCreationDate = otherCard.getCreationDate()
-            self.mDateToShow = otherCard.getDateToShow()
-            self.mDaysToWait = otherCard.getDaysToWait()
+            self.cardId = otherCard.cardId
+            self.deckId = otherCard.deckId
+            self.question = otherCard.question
+            self.answer = otherCard.answer
+            self.associatedCards = otherCard.associatedCardIds
+            self.creationDate = otherCard.creationDate
+            self.dateToShow = otherCard.dateToShow
+            self.daysToWait = otherCard.daysToWait
             return self
         }
         
         func build() -> Card {
-            return Card(id: mId, question: mQuestion, answer: mAnswer, creationDate: mCreationDate, associatedCards: mAssociatedCards, dateToShow: mDateToShow, daysToWait: mDaysToWait)
+            return Card(cardId: cardId,
+                        deckId: deckId,
+                        question: question,
+                        answer: answer,
+                        creationDate: creationDate,
+                        associatedCards: associatedCards,
+                        dateToShow: dateToShow,
+                        daysToWait: daysToWait)
         }
     }
 }
@@ -131,9 +120,9 @@ extension Card : Equatable {}
 extension Card : Comparable {}
 
 public func ==(left: Card, right: Card) -> Bool {
-    return (left.mId == right.mId)
+    return (left.cardId == right.cardId)
 }
 
 public func <(left: Card, right: Card) -> Bool {
-    return left.mDateToShow.isGreaterThanDate(right.mDateToShow)
+    return left.dateToShow.isGreaterThanDate(right.dateToShow)
 }

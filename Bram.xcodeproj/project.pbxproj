@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		A6732A361D93B978002AAB60 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A351D93B978002AAB60 /* Card.swift */; };
 		A6732A381D93C4DA002AAB60 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A371D93C4DA002AAB60 /* DateExtension.swift */; };
+		A67373AE1DBB3470009E31F0 /* CardDue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68CFF411DBB27CC00759817 /* CardDue.swift */; };
+		A68CFF421DBB27CC00759817 /* CardDue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68CFF411DBB27CC00759817 /* CardDue.swift */; };
 		A6BFF3C31DAE758300E47610 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFF3C21DAE758300E47610 /* Scheduler.swift */; };
 		A6BFF3C91DAE7AE000E47610 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFF3C21DAE758300E47610 /* Scheduler.swift */; };
 		A6BFF3CB1DAE7B0400E47610 /* TimeAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFF3CA1DAE7B0400E47610 /* TimeAdded.swift */; };
@@ -50,6 +52,7 @@
 		A37FCF83AFCB18D7AB2242C4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		A6732A351D93B978002AAB60 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A6732A371D93C4DA002AAB60 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		A68CFF411DBB27CC00759817 /* CardDue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDue.swift; sourceTree = "<group>"; };
 		A6BFF3C21DAE758300E47610 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		A6BFF3CA1DAE7B0400E47610 /* TimeAdded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAdded.swift; sourceTree = "<group>"; };
 		A6D296231D7331A200BF3F54 /* Bram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +104,7 @@
 			children = (
 				A6732A351D93B978002AAB60 /* Card.swift */,
 				A6DB0F9A1D991F6400988B1B /* Deck.swift */,
+				A68CFF411DBB27CC00759817 /* CardDue.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -402,6 +406,7 @@
 				A6D296291D7331A200BF3F54 /* ViewController.swift in Sources */,
 				A6BFF3CB1DAE7B0400E47610 /* TimeAdded.swift in Sources */,
 				A6732A381D93C4DA002AAB60 /* DateExtension.swift in Sources */,
+				A68CFF421DBB27CC00759817 /* CardDue.swift in Sources */,
 				A6D2962F1D7331A200BF3F54 /* Bram.xcdatamodeld in Sources */,
 				A6D296271D7331A200BF3F54 /* AppDelegate.swift in Sources */,
 				A6732A361D93B978002AAB60 /* Card.swift in Sources */,
@@ -416,6 +421,7 @@
 				A6D2963F1D7331A200BF3F54 /* BramTests.swift in Sources */,
 				A6F7FC471DAA9B9C00D689BE /* DateExtension.swift in Sources */,
 				A6BFF3C91DAE7AE000E47610 /* Scheduler.swift in Sources */,
+				A67373AE1DBB3470009E31F0 /* CardDue.swift in Sources */,
 				A6F7FC4A1DAA9C3F00D689BE /* Card.swift in Sources */,
 				A6BFF3CC1DAE7B2600E47610 /* TimeAdded.swift in Sources */,
 			);
