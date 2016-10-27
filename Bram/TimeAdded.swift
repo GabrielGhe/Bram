@@ -11,4 +11,17 @@ enum TimeAdded: Double {
     case OK = 1
     case GOOD = 1.4
     case GREAT = 1.8
+    
+    var rank: UInt8 {
+        switch (self) {
+        case .BAD:
+            return 0
+        case .OK:
+            return 1
+        case .GOOD:
+            return 2
+        case .GREAT:
+            return 3
+        }
+    }
 }

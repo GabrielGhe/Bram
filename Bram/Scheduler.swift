@@ -20,41 +20,62 @@ class Scheduler {
         return Card.Builder()
             .setCard(card)
             .setDaysToWait(daysToWait)
-            .setDateToShow(Date().addDays(daysToWait))
+            .setDateToShow(Date.s.addDays(daysToWait))
+            .addProgress(answer.rank)
             .build()
     }
     
     init(deck: Deck) {
         self.queue = PriorityQueue<CardDue>(ascending: false)
         self.cardsPerDay = deck.cardsPerDay
-        self.addCardDues(deck.cards)
+        self.addCards(deck.cards)
     }
     
     func addCardDue(_ cardDue: CardDue) {
         addCardDues([cardDue])
     }
     
+    func addCardDues(_ cardDues: [CardDue]) {
+        for cardDue in cardDues {
+            queue.push(cardDue)
+        }
+    }
+    
     func deleteCardDue(_ cardDue: CardDue) {
-        
+        queue.remove(cardDue)
     }
     
     func updateCardDue(_ cardDue: CardDue) {
-        
+        deleteCardDue(cardDue)
+        addCardDue(cardDue)
     }
     
-    func addCardDues(_ cardDues: [CardDue]) {
-        
+    func addCard(_ card: Card) {
+        addCards([card])
     }
     
-    func addCardDue(_ card: Card) {
-        
+    func addCards(_ cards: [Card]) {
+        var cardDues: [CardDue] = []
+        for card in cards {
+            cardDues.append(CardDue(cardId: card.cardId, deckId: card.deckId, dateToShow: card.dateToShow))
+        }
+        addCardDues(cardDues)
     }
     
-    func addCardDues(_ cards: [Card]) {
+    func removeCardsDue(_ date: Date = Date.e) -> [CardDue] {
+        var cardDues:[CardDue] = []
+        var cardPeek = queue.peek()
+        while !queue.isEmpty && cardPeek != nil && Date.isSmallerThan(cardPeek!.dateToShow, date) {
+            assert(Date.isSmallerThan(cardPeek!.dateToShow, date))
+            let cardDue = queue.pop()!
+            cardDues.append(cardDue)
+            cardPeek = queue.peek()
+        }
         
+        return cardDues
     }
-
-    func getCardsDue(_ date: Date = Date()) -> [CardDue] {
+    
+    func getCardsDue(_ date: Date = Date.e) -> [CardDue] {
         var cardDues:[CardDue] = []
         var ctr = 0
         var gen = queue.makeIterator()

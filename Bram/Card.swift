@@ -17,17 +17,19 @@ open class Card {
     private(set) var associatedCardIds: [String]
     private(set) var dateToShow: Date
     private(set) var daysToWait: Int
+    private(set) var progress: [UInt8]
     
     fileprivate init(cardId:String, deckId:String, question:String, answer:String,
-                     creationDate: Date, associatedCards: [String], dateToShow: Date, daysToWait: Int) {
+                     creationDate: Date, associatedCards: [String], dateToShow: Date, daysToWait: Int, progress: [UInt8]) {
         self.cardId = cardId
         self.deckId = deckId
         self.question = question
         self.answer = answer
-        self.creationDate = Date()
+        self.creationDate = creationDate
         self.dateToShow = dateToShow
         self.associatedCardIds = associatedCards
         self.daysToWait = daysToWait
+        self.progress = progress
     }
     
     class Builder {
@@ -39,6 +41,7 @@ open class Card {
         fileprivate var associatedCards: [String]
         fileprivate var dateToShow: Date
         fileprivate var daysToWait: Int
+        fileprivate var progress: [UInt8]
         
         init() {
             cardId = UUID().uuidString
@@ -46,9 +49,10 @@ open class Card {
             question = ""
             answer = ""
             associatedCards = []
-            creationDate = Date()
-            dateToShow = Date()
+            creationDate = Date.s
+            dateToShow = Date.s
             daysToWait = 1
+            progress = []
         }
         
         func setCardId(_ id: String) -> Card.Builder  {
@@ -82,12 +86,22 @@ open class Card {
         }
         
         func setDateToShow(_ dateToShow: Date) -> Card.Builder {
-            self.dateToShow = dateToShow
+            self.dateToShow = dateToShow.s
             return self
         }
         
         func setDaysToWait(_ daysToWait: Int) -> Card.Builder {
             self.daysToWait = daysToWait
+            return self
+        }
+        
+        func setProgress(_ progress: [UInt8]) -> Card.Builder {
+            self.progress = progress
+            return self
+        }
+        
+        func addProgress(_ singleProgress: UInt8) -> Card.Builder {
+            self.progress.append(singleProgress)
             return self
         }
         
@@ -100,6 +114,7 @@ open class Card {
             self.creationDate = otherCard.creationDate
             self.dateToShow = otherCard.dateToShow
             self.daysToWait = otherCard.daysToWait
+            self.progress = otherCard.progress
             return self
         }
         
@@ -111,7 +126,8 @@ open class Card {
                         creationDate: creationDate,
                         associatedCards: associatedCards,
                         dateToShow: dateToShow,
-                        daysToWait: daysToWait)
+                        daysToWait: daysToWait,
+                        progress: progress)
         }
     }
 }

@@ -13,6 +13,7 @@ class Deck {
     private(set) var name: String
     private(set) var deckId: String
     private(set) var cardsPerDay: Int
+    private(set) var creationDate: Date
     
     public var cardIds: [String]{
         return cardMap.keys.sorted()
@@ -23,14 +24,15 @@ class Deck {
     }
     
     convenience init(name: String) {
-        self.init(deckId: UUID().uuidString, name: name, cards: [], cardsPerDay: 10)
+        self.init(deckId: UUID().uuidString, name: name, cards: [], cardsPerDay: 10, creationDate: Date.s)
     }
     
-    init(deckId: String, name: String, cards: [Card], cardsPerDay: Int) {
+    init(deckId: String, name: String, cards: [Card], cardsPerDay: Int, creationDate: Date) {
         self.deckId = deckId
         self.name = name
         self.cardsPerDay = cardsPerDay
         self.cardMap = [:]
+        self.creationDate = creationDate
         addCards(cards)
     }
     
@@ -39,7 +41,7 @@ class Deck {
     }
     
     func deleteCard(_ card: Card) {
-        var cardRemoved = cardMap.removeValue(forKey: card.cardId)
+        let cardRemoved = cardMap.removeValue(forKey: card.cardId)
     }
     
     func updateCard(_ card: Card) {
