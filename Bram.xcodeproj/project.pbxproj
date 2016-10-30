@@ -282,12 +282,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = GabrielGhe;
 				TargetAttributes = {
 					A6D296221D7331A200BF3F54 = {
 						CreatedOnToolsVersion = 7.3.1;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 0810;
 					};
 					A6D296391D7331A200BF3F54 = {
 						CreatedOnToolsVersion = 7.3.1;

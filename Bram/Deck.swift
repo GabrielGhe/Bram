@@ -9,7 +9,7 @@
 import UIKit
 
 class Deck {
-    fileprivate var cardMap: [String:Card]
+    private var cardMap: [String:Card]
     private(set) var name: String
     private(set) var deckId: String
     private(set) var cardsPerDay: Int
@@ -40,8 +40,11 @@ class Deck {
         addCards([card])
     }
     
-    func deleteCard(_ card: Card) {
-        let cardRemoved = cardMap.removeValue(forKey: card.cardId)
+    func deleteCard(_ card: Card) -> Card? {
+        if cardMap[card.cardId] != nil {
+            return nil
+        }
+        return cardMap.removeValue(forKey: card.cardId)
     }
     
     func updateCard(_ card: Card) {

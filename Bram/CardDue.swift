@@ -12,11 +12,13 @@ open class CardDue {
     private(set) var cardId: String
     private(set) var deckId: String
     private(set) var dateToShow: Date
+    private(set) var priority: Int
     
-    init(cardId: String, deckId: String, dateToShow: Date) {
+    init(cardId: String, deckId: String, dateToShow: Date, priority: Int = 0) {
         self.cardId = cardId
         self.deckId = deckId
         self.dateToShow = dateToShow
+        self.priority = priority
     }
 }
 
@@ -28,5 +30,7 @@ public func ==(left: CardDue, right: CardDue) -> Bool {
 }
 
 public func <(left: CardDue, right: CardDue) -> Bool {
-    return left.dateToShow.isGreaterThanDate(right.dateToShow)
+    return left.dateToShow.isGreaterThanDate(right.dateToShow) ||
+        (Date.isSameDay(left.dateToShow, right.dateToShow) &&
+        left.priority > right.priority)
 }

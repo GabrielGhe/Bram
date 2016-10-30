@@ -1,27 +1,10 @@
 PODS:
-  - FontAwesome.swift (0.11.1)
-  - SnapKit (3.0.1)
   - SwiftPriorityQueue (1.1.1)
 
 DEPENDENCIES:
-  - FontAwesome.swift (from `https://github.com/thii/FontAwesome.swift.git`, branch
-    `master`)
-  - SnapKit (~> 3.0)
   - SwiftPriorityQueue (~> 1.1)
 
-EXTERNAL SOURCES:
-  FontAwesome.swift:
-    :branch: master
-    :git: https://github.com/thii/FontAwesome.swift.git
-
-CHECKOUT OPTIONS:
-  FontAwesome.swift:
-    :commit: b03d71746f277690d1ff7df0c539641c4ba57d4d
-    :git: https://github.com/thii/FontAwesome.swift.git
-
 SPEC CHECKSUMS:
-  FontAwesome.swift: 9879cd6a1462bf160662d519f7b7474d73bdd1c3
-  SnapKit: f818b8326d45b4e1c777d0ab27b5c0a3624bfdeb
   SwiftPriorityQueue: cced1a141ab3cdbbd00fe1ec3b831c69a54cc2fd
 
 COCOAPODS: 0.39.0
