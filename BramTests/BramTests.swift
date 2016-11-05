@@ -84,8 +84,7 @@ class BramTests: XCTestCase {
         
         let deck: Deck = Deck(name: "Test1")
         deck.addCards([card1, card2, card3, card4])
-        let scheduler = Scheduler(deck: deck)
-        XCTAssertEqual(scheduler.getCardsDue().count, 3, "There should only be 3 cards due today")
+        XCTAssertEqual(deck.getCardsDueBy().count, 3, "There should only be 3 cards due today")
     }
     
     func testTimeDifference() {
@@ -162,21 +161,38 @@ class BramTests: XCTestCase {
         
         let deck = Deck(name: "Deck1")
         deck.addCards([card1, card2, card3, card4, card5, card6, card7, card8])
-        let scheduler = Scheduler(deck: deck)
         
-        let cards1day = scheduler.removeCardsDue(Date.s.addDays(1))
-        let cards2days = scheduler.removeCardsDue(Date.s.addDays(2))
-        let cards3days = scheduler.removeCardsDue(Date.s.addDays(3))
+        let cards1day = deck.getCardsDueBy(Date.s.addDays(1))
+        for cardDue in cards1day {
+            deck.deleteCard(cardId: cardDue.cardId)
+        }
         
-        let cards6days = scheduler.removeCardsDue(Date.s.addDays(6))
-        let cards8days = scheduler.removeCardsDue(Date.s.addDays(8))
-        let cards10days = scheduler.removeCardsDue(Date.s.addDays(10))
+        let cards2days = deck.getCardsDueBy(Date.s.addDays(2))
+        for cardDue in cards2days {
+            deck.deleteCard(cardId: cardDue.cardId)
+        }
+        
+        let cards3days = deck.getCardsDueBy(Date.s.addDays(3))
+        for cardDue in cards3days {
+            deck.deleteCard(cardId: cardDue.cardId)
+        }
+        
+        let cards6days = deck.getCardsDueBy(Date.s.addDays(6))
+        for cardDue in cards6days {
+            deck.deleteCard(cardId: cardDue.cardId)
+        }
+        
+        let cards8days = deck.getCardsDueBy(Date.s.addDays(8))
+        for cardDue in cards8days {
+            deck.deleteCard(cardId: cardDue.cardId)
+        }
+        
+        let cards10days = deck.getCardsDueBy(Date.s.addDays(10))
         
         XCTAssert(Date.isSmallerThan(card1.dateToShow, Date.s.addDays(1)), String(card1.daysToWait))
         XCTAssert(!Date.isSmallerThan(card2.dateToShow, Date.s.addDays(1)), String(card2.daysToWait))
         XCTAssert(!Date.isSmallerThan(card3.dateToShow, Date.s.addDays(1)), String(card3.daysToWait))
         XCTAssert(Date.isSmallerThan(card5.dateToShow, Date.s.addDays(1)), String(card5.daysToWait))
-        
         
         XCTAssertEqual(cards1day.count, 2, "There should be two cards for tomorrow, 1 and 5")
         XCTAssertEqual(cards2days.count, 2, "There should be two cards for 2 days from now, 2 and 3")
@@ -184,6 +200,21 @@ class BramTests: XCTestCase {
         XCTAssertEqual(cards6days.count, 1, "There should be one card for 6 days from now")
         XCTAssertEqual(cards8days.count, 1, "There should be one card for 8 days from now")
         XCTAssertEqual(cards10days.count, 1, "There should be one card for 10 days from now")
+    }
+    
+    func testUpdateCard() {
+        var card1 = Card.Builder()
+            .setCardId("1")
+            .setQuestion("question 1")
+            .setAnswer("answer 1")
+            .setDaysToWait(5)
+            .build()
+        
+        let deck = Deck(name: "TestDeck")
+        deck.addCards([card1])
+        card1 = Scheduler.scheduleShowTime(card: card1, answer: .GOOD)
+        deck.updateCard(card1)
+        XCTAssertEqual(card1.daysToWait, deck.getCard(byId: card1.cardId)!.daysToWait, "Should have updated card")
     }
     
     func testPerformanceExample() {

@@ -40,11 +40,19 @@ class Deck {
         addCards([card])
     }
     
-    func deleteCard(_ card: Card) -> Card? {
-        if cardMap[card.cardId] != nil {
-            return nil
+    func getCard(byId cardId: String) -> Card? {
+        return cardMap[cardId]
+    }
+    
+    func deleteCard(cardId: String) {
+        if cardMap[cardId] == nil {
+            return
         }
-        return cardMap.removeValue(forKey: card.cardId)
+        cardMap.removeValue(forKey: cardId)
+    }
+    
+    func deleteCard(card: Card) {
+        self.deleteCard(cardId: card.cardId)
     }
     
     func updateCard(_ card: Card) {
@@ -55,5 +63,17 @@ class Deck {
         for card in cards {
             self.cardMap[card.cardId] = card
         }
+    }
+    
+    func getCardsDueBy(_ date: Date = Date.e) -> [CardDue] {
+        var cardDues:[CardDue] = []
+        
+        for card in cardMap.values {
+            if Date.isSmallerThan(card.dateToShow, date) {
+                cardDues.append(CardDue(card: card))
+            }
+        }
+        
+        return cardDues.sorted()
     }
 }

@@ -14,6 +14,13 @@ open class CardDue {
     private(set) var dateToShow: Date
     private(set) var priority: Int
     
+    convenience init(card: Card) {
+        self.init(cardId: card.cardId,
+                  deckId: card.deckId,
+                  dateToShow: card.dateToShow,
+                  priority: card.associatedCardIds.count)
+    }
+    
     init(cardId: String, deckId: String, dateToShow: Date, priority: Int = 0) {
         self.cardId = cardId
         self.deckId = deckId
