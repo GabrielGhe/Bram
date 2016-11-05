@@ -79,7 +79,8 @@ Priority | As a ... | I want to ... | So that I can...
 `* * *` | user | create a new list | record mem that ‘some day’ I can store in my long term memory
 `* * *` | user | delete a list | that I don't need anymore
 `* * *` | user | create a mem inside a list | be reminded of it `some day`
-`* * *` | user | get a list of mems to be reviewed on that day | can store those mems into my long term memory
+`* * *` | user | get a list of mems per deck to be reviewed on that day | can store those mems into my long term memory
+`* * *` | user | answer a mem and with a rating | show it again at a later time depending on how well I know the mem 
 `* * *` | user | search my list | find a mem that I'm looking for in an easier manner
 `* * *` | user | edit a list | update the details of that specific list
 `* * *` | user | edit a mem | update the details of that specific mem
@@ -91,6 +92,7 @@ Priority | As a ... | I want to ... | So that I can...
 `*` | user | see the progress of a list | see how much I have improved
 `*` | user | see the progress of a mem | see how much I have improved
 `*` | user | share my list with someone else | help them learn too
+`*` | user | find online audio that pronounces a word | listen to pronounciation
 
 {More to be added}
 
