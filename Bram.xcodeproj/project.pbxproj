@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A623AE9C1DCDC87000B74DE7 /* ReminderCardDue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A623AE9B1DCDC87000B74DE7 /* ReminderCardDue.swift */; };
 		A6732A361D93B978002AAB60 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A351D93B978002AAB60 /* Card.swift */; };
 		A6732A381D93C4DA002AAB60 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A371D93C4DA002AAB60 /* DateExtension.swift */; };
 		A67373AE1DBB3470009E31F0 /* CardDue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68CFF411DBB27CC00759817 /* CardDue.swift */; };
@@ -51,7 +50,6 @@
 /* Begin PBXFileReference section */
 		5B45726BFF1400A5C6160286 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A37FCF83AFCB18D7AB2242C4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		A623AE9B1DCDC87000B74DE7 /* ReminderCardDue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderCardDue.swift; sourceTree = "<group>"; };
 		A6732A351D93B978002AAB60 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A6732A371D93C4DA002AAB60 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		A68CFF411DBB27CC00759817 /* CardDue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDue.swift; sourceTree = "<group>"; };
@@ -107,7 +105,6 @@
 				A6732A351D93B978002AAB60 /* Card.swift */,
 				A6DB0F9A1D991F6400988B1B /* Deck.swift */,
 				A68CFF411DBB27CC00759817 /* CardDue.swift */,
-				A623AE9B1DCDC87000B74DE7 /* ReminderCardDue.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -404,7 +401,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A623AE9C1DCDC87000B74DE7 /* ReminderCardDue.swift in Sources */,
 				A6DB0F9B1D991F6400988B1B /* Deck.swift in Sources */,
 				A6BFF3C31DAE758300E47610 /* Scheduler.swift in Sources */,
 				A6D296291D7331A200BF3F54 /* ViewController.swift in Sources */,

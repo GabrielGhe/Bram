@@ -217,6 +217,39 @@ class BramTests: XCTestCase {
         XCTAssertEqual(card1.daysToWait, deck.getCard(byId: card1.cardId)!.daysToWait, "Should have updated card")
     }
     
+    func testGetRelated() {
+        let card1 = Card.Builder()
+            .setCardId("1")
+            .setQuestion("question 1")
+            .setAnswer("answer 1")
+            .setDateToShow(Date().addDays(2).e)
+            .setDaysToWait(2)
+            .build()
+        
+        let card2 = Card.Builder()
+            .setCard(card1)
+            .setCardId("2")
+            .build()
+        
+        let card3 = Card.Builder()
+            .setCard(card1)
+            .setCardId("3")
+            .build()
+        
+        let card4 = Card.Builder()
+            .setCard(card1)
+            .setCardId("4")
+            .setAssociatedCards([card1.cardId, card2.cardId, card3.cardId])
+            .setDaysToWait(0)
+            .setDateToShow(Date())
+            .build()
+        
+        let deck = Deck(name: "test2")
+        deck.addCards([card1, card2, card3, card4])
+        let cardsToDo = deck.getCardsDueBy()
+        XCTAssertEqual(cardsToDo.count, 1, "Only card4")
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure {

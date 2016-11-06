@@ -12,20 +12,24 @@ open class CardDue {
     private(set) var cardId: String
     private(set) var deckId: String
     private(set) var dateToShow: Date
-    private(set) var priority: Int
+    private(set) var isReminder: Bool
     
     convenience init(card: Card) {
+        self.init(card: card, isReminder: false)
+    }
+    
+    convenience init(card: Card, isReminder: Bool) {
         self.init(cardId: card.cardId,
                   deckId: card.deckId,
                   dateToShow: card.dateToShow,
-                  priority: card.associatedCardIds.count)
+                  isReminder: isReminder)
     }
     
-    init(cardId: String, deckId: String, dateToShow: Date, priority: Int = 0) {
+    init(cardId: String, deckId: String, dateToShow: Date, isReminder: Bool = false) {
         self.cardId = cardId
         self.deckId = deckId
         self.dateToShow = dateToShow
-        self.priority = priority
+        self.isReminder = isReminder
     }
 }
 
@@ -38,6 +42,5 @@ public func ==(left: CardDue, right: CardDue) -> Bool {
 
 public func <(left: CardDue, right: CardDue) -> Bool {
     return left.dateToShow.isGreaterThanDate(right.dateToShow) ||
-        (Date.isSameDay(left.dateToShow, right.dateToShow) &&
-        left.priority > right.priority)
+        Date.isSameDay(left.dateToShow, right.dateToShow)
 }

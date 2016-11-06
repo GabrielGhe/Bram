@@ -65,6 +65,20 @@ class Deck {
         }
     }
     
+    func getAssociatedCardsDue(mainCardId: String) -> [CardDue] {
+        var cardDues: [CardDue] = []
+        if let mainCard = cardMap[mainCardId] {
+            for cardId in mainCard.associatedCardIds {
+                guard let card = cardMap[cardId] else {
+                    continue
+                }
+                cardDues.append(CardDue(card: card, isReminder: true))
+            }
+        }
+        
+        return cardDues
+    }
+    
     func getCardsDueBy(_ date: Date = Date.e) -> [CardDue] {
         var cardDues:[CardDue] = []
         
