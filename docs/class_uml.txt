@@ -1,0 +1,23 @@
+https://www.planttext.com/
+
+@startuml
+
+title Bram (Jia)
+
+class Deck {
+    +Int 
+    +Card[] cards
+}
+
+class CardDue
+class Card
+class Scheduler
+class TimeAdded
+
+Deck "1" o-- "*" Card
+Scheduler "1" o-- "1" Card
+Scheduler *-- TimeAdded
+Card o-- CardDue
+Deck o-- CardDue
+
+@enduml

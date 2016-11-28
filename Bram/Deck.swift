@@ -33,36 +33,40 @@ class Deck {
         self.cardsPerDay = cardsPerDay
         self.cardMap = [:]
         self.creationDate = creationDate
-        addCards(cards)
+        add(cards: cards)
     }
     
-    func addCard(_ card: Card) {
-        addCards([card])
+    func add(card: Card) {
+        add(cards: [card])
     }
     
-    func getCard(byId cardId: String) -> Card? {
+    func get(cardId: String) -> Card? {
         return cardMap[cardId]
     }
     
-    func deleteCard(cardId: String) {
+    func delete(cardId: String) {
         if cardMap[cardId] == nil {
             return
         }
         cardMap.removeValue(forKey: cardId)
     }
     
-    func deleteCard(card: Card) {
-        self.deleteCard(cardId: card.cardId)
+    func delete(card: Card) {
+        self.delete(cardId: card.cardId)
     }
     
-    func updateCard(_ card: Card) {
+    func update(card: Card) {
         self.cardMap.updateValue(card, forKey: card.cardId)
     }
     
-    func addCards(_ cards: [Card]) {
+    func add(cards: [Card]) {
         for card in cards {
             self.cardMap[card.cardId] = card
         }
+    }
+    
+    func rename(deckName: String) {
+        name = deckName
     }
     
     func getAssociatedCardsDue(mainCardId: String) -> [CardDue] {
