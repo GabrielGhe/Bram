@@ -25,9 +25,9 @@
 // This code was inspired by Section 2.4 of Algorithms by Sedgewick & Wayne, 4th Edition
 
 #if !swift(>=3.0)
-    typealias IteratorProtocol = Swift.IteratorProtocol
-    typealias Sequence = Swift.Sequence
-    typealias Collection = Swift.Collection
+    typealias IteratorProtocol = GeneratorType
+    typealias Sequence = SequenceType
+    typealias Collection = CollectionType
 #endif
 
 /// A PriorityQueue takes objects to be pushed of any type that implements Comparable.
@@ -38,7 +38,7 @@
 public struct PriorityQueue<T: Comparable> {
     
     fileprivate var heap = [T]()
-    fileprivate let ordered: (T, T) -> Bool
+    private let ordered: (T, T) -> Bool
     
     public init(ascending: Bool = false, startingValues: [T] = []) {
         
@@ -71,13 +71,6 @@ public struct PriorityQueue<T: Comparable> {
         swim(heap.count - 1)
     }
     
-    public mutating func remove(_ element: T) {
-        var index = heap.index(of: element)
-        if let index = index {
-            heap.remove(at: index)
-        }
-    }
-    
     /// Remove and return the element with the highest priority (or lowest if ascending). O(lg n)
     ///
     /// - returns: The element with the highest priority in the Priority Queue, or nil if the PriorityQueue is empty.
@@ -105,12 +98,12 @@ public struct PriorityQueue<T: Comparable> {
         #if swift(>=3.0)
             heap.removeAll(keepingCapacity: false)
         #else
-            heap.removeAll(keepingCapacity: false)
+            heap.removeAll(keepCapacity: false)
         #endif
     }
     
     // Based on example from Sedgewick p 316
-    fileprivate mutating func sink(_ index: Int) {
+    private mutating func sink(_ index: Int) {
         var index = index
         while 2 * index + 1 < heap.count {
             
@@ -125,7 +118,7 @@ public struct PriorityQueue<T: Comparable> {
     }
     
     // Based on example from Sedgewick p 316
-    fileprivate mutating func swim(_ index: Int) {
+    private mutating func swim(_ index: Int) {
         var index = index
         while index > 0 && ordered(heap[(index - 1) / 2], heap[index]) {
             swap(&heap[(index - 1) / 2], &heap[index])

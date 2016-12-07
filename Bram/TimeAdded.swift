@@ -18,7 +18,7 @@ enum TimeAdded: Double {
         case .OK:
             return 1
         case .GREAT:
-            return 3
+            return 2
         }
     }
 }

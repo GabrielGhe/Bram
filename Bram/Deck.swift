@@ -86,12 +86,30 @@ class Deck {
     func getCardsDueBy(_ date: Date = Date.e) -> [CardDue] {
         var cardDues:[CardDue] = []
         
-        for card in cardMap.values {
+        for card in cards {
             if Date.isSmallerThan(card.dateToShow, date) {
                 cardDues.append(CardDue(card: card))
             }
         }
         
         return cardDues.sorted()
+    }
+    
+    func search(text: String) -> [CardDue] {
+        var searchResults:[CardDue] = []
+        let temp = text.characters.map { String($0) }
+        var regex = temp.joined(separator: ".*")
+        regex = ".*\(regex).*"
+        
+        for card in cards {
+            var isMatch = false
+            isMatch = isMatch || regex.matches(text: card.answer)
+            isMatch = isMatch || regex.matches(text: card.question)
+            if isMatch {
+                searchResults.append(CardDue(card:card))
+            }
+        }
+        
+        return searchResults
     }
 }

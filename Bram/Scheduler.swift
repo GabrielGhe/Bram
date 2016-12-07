@@ -11,14 +11,17 @@ import SwiftPriorityQueue
 
 class Scheduler {
     static func scheduleShowTime(card: Card, answer: TimeAdded) -> Card {
+        return scheduleShowTime(card: card, answer: answer, fromDate: Date.s)
+    }
+    
+    static func scheduleShowTime(card: Card, answer: TimeAdded, fromDate date: Date) -> Card {
         let temp = Double(card.daysToWait) * answer.rawValue
         let daysToWait = Int(temp + 0.5) + 1
         
         return Card.Builder()
             .setCard(card)
             .setDaysToWait(daysToWait)
-            .setDateToShow(Date.s.addDays(daysToWait))
-            .addProgress(answer.rank)
+            .setDateToShow(date.addDays(daysToWait))
             .build()
     }
 }

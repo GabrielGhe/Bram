@@ -4,7 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods.xcscheme</key>
+		<key>FontAwesome.swift-FontAwesome.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>FontAwesome.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Bram.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +32,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>84284088802AE72BA09C0E0CBE545DEF</key>
+		<key>090BF47BDB9B8F8C33EDCFB0AD5FE376</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E019D4ABCE0CC3F771FEAB883A07F7D2</key>
+		<key>77979430716929ED71E6E262A9F9A184</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B220AED8FC3777C70D54AA6D36068359</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C74D47B051BF84CA30E0723F127F42AD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D7837850ED20EE434A5BA07CBD2C8ABA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

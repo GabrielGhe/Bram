@@ -122,155 +122,150 @@ class BramTests: XCTestCase {
         assert(!Date.isSmallerThan(twoDays, today), "twoDay should not be within the range")
     }
     
-    func testGetCardsDueScheduleOverDue() {
-        var card1 = Card.Builder()
+    func testScheduleShortWaitBad() {
+        let delay = 1
+        var card = Card.Builder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
             .build()
         
-        var card2 = Card.Builder()
-            .setCard(card1)
-            .setCardId("2")
-            .build()
-        
-        
+        card = Scheduler.scheduleShowTime(card: card, answer: TimeAdded.BAD)
+        let deck = Deck(name: "Deck1")
+        deck.add(cards: [card])
+        let cardsToday = deck.getCardsDueBy(Date.s.addDays(delay))
+        XCTAssertEqual(cardsToday.count, 1, "The card should be due")
+        XCTAssertEqual(cardsToday[0].dateToShow.s, Date().addDays(delay).s, "The card should be due")
     }
     
-    func testGetCardsDueScheduleNone() {
-        var card1 = Card.Builder()
+    func testScheduleShortWaitOk() {
+        let delay = 2
+        var card = Card.Builder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
             .build()
         
-        var card2 = Card.Builder()
-            .setCard(card1)
-            .setCardId("2")
-            .build()
+        card = Scheduler.scheduleShowTime(card: card, answer: TimeAdded.OK)
+        let deck = Deck(name: "Deck1")
+        deck.add(cards: [card])
+        let cardsToday = deck.getCardsDueBy(Date.s.addDays(delay))
+        XCTAssertEqual(cardsToday.count, 1, "The card should be due")
+        XCTAssertEqual(cardsToday[0].dateToShow.s, Date().addDays(delay).s, "The card should be due")
     }
     
-    func testGetCardsDueScheduleSome() {
-        var card1 = Card.Builder()
+    func testScheduleShortWaitGreat() {
+        let delay = 3
+        var card = Card.Builder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
             .build()
         
-        var card2 = Card.Builder()
-            .setCard(card1)
-            .setCardId("2")
-            .build()
+        card = Scheduler.scheduleShowTime(card: card, answer: TimeAdded.GREAT)
+        let deck = Deck(name: "Deck1")
+        deck.add(cards: [card])
+        let cardsToday = deck.getCardsDueBy(Date.s.addDays(delay))
+        XCTAssertEqual(cardsToday.count, 1, "The card should be due")
+        XCTAssertEqual(cardsToday[0].dateToShow.s, Date().addDays(delay).s, "The card should be due")
     }
     
-    func testGetCardsDueScheduleOne() {
-        var card1 = Card.Builder()
+    func testScheduleLongWaitBad() {
+        let daysWait = 1
+        var card = Card.Builder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
-            .build()
-        
-        var card2 = Card.Builder()
-            .setCard(card1)
-            .setCardId("2")
-            .build()
-    }
-    
-    func testGetCardsDueSchedule() {
-        var card1 = Card.Builder()
-            .setCardId("1")
-            .setQuestion("question 1")
-            .setAnswer("answer 1")
-            .build()
-        
-        var card2 = Card.Builder()
-            .setCard(card1)
-            .setCardId("2")
-            .build()
-        
-        var card3 = Card.Builder()
-            .setCard(card1)
-            .setCardId("3")
-            .build()
-        
-        var card4 = Card.Builder()
-            .setCard(card1)
-            .setCardId("4")
-            .build()
-        
-        var card5 = Card.Builder()
-            .setCard(card1)
-            .setCardId("5")
             .setDaysToWait(5)
             .build()
         
-        var card6 = Card.Builder()
-            .setCard(card1)
-            .setCardId("6")
-            .setDaysToWait(5)
-            .build()
-        
-        var card7 = Card.Builder()
-            .setCard(card1)
-            .setCardId("7")
-            .setDaysToWait(5)
-            .build()
-        
-        var card8 = Card.Builder()
-            .setCard(card1)
-            .setCardId("8")
-            .setDaysToWait(5)
-            .build()
-        
-        card1 = Scheduler.scheduleShowTime(card: card1, answer: TimeAdded.BAD)
-        card2 = Scheduler.scheduleShowTime(card: card2, answer: TimeAdded.OK)
-        card4 = Scheduler.scheduleShowTime(card: card4, answer: TimeAdded.GREAT)
-        
-        card5 = Scheduler.scheduleShowTime(card: card5, answer: TimeAdded.BAD)
-        card6 = Scheduler.scheduleShowTime(card: card6, answer: TimeAdded.OK)
-        card8 = Scheduler.scheduleShowTime(card: card8, answer: TimeAdded.GREAT)
+        card = Scheduler.scheduleShowTime(card: card, answer: TimeAdded.BAD)
+        XCTAssertEqual(card.daysToWait, daysWait, "The card should wait for \(daysWait) days")
         
         let deck = Deck(name: "Deck1")
-        deck.add(cards: [card1, card2, card3, card4, card5, card6, card7, card8])
+        deck.add(cards: [card])
+        let cardsToday = deck.getCardsDueBy(Date.s.addDays(daysWait))
+        XCTAssertEqual(cardsToday.count, 1, "The card should be due")
+        XCTAssertEqual(cardsToday[0].dateToShow.s, Date().addDays(daysWait).s, "The card should be due")
+    }
+    
+    func testScheduleLongWaitOk() {
+        let daysWait = 6
+        var card = Card.Builder()
+            .setCardId("1")
+            .setQuestion("question 1")
+            .setAnswer("answer 1")
+            .setDaysToWait(5)
+            .build()
         
-        let cards1day = deck.getCardsDueBy(Date.s.addDays(1))
-        for cardDue in cards1day {
-            deck.delete(cardId: cardDue.cardId)
-        }
+        card = Scheduler.scheduleShowTime(card: card, answer: TimeAdded.OK)
+        XCTAssertEqual(card.daysToWait, daysWait, "The card should wait for \(daysWait) days")
         
-        let cards2days = deck.getCardsDueBy(Date.s.addDays(2))
-        for cardDue in cards2days {
-            deck.delete(cardId: cardDue.cardId)
-        }
+        let deck = Deck(name: "Deck1")
+        deck.add(cards: [card])
+        let cardsToday = deck.getCardsDueBy(Date.s.addDays(daysWait))
+        XCTAssertEqual(cardsToday.count, 1, "The card should be due")
+        XCTAssertEqual(cardsToday[0].dateToShow.s, Date().addDays(daysWait).s, "The card should be due")
+    }
+    
+    func testScheduleLongWaitGreat() {
+        let daysWait = 10
+        var card = Card.Builder()
+            .setCardId("1")
+            .setQuestion("question 1")
+            .setAnswer("answer 1")
+            .setDaysToWait(5)
+            .build()
         
-        let cards3days = deck.getCardsDueBy(Date.s.addDays(3))
-        for cardDue in cards3days {
-            deck.delete(cardId: cardDue.cardId)
-        }
+        card = Scheduler.scheduleShowTime(card: card, answer: TimeAdded.GREAT)
+        XCTAssertEqual(card.daysToWait, daysWait, "The card should wait for \(daysWait) days")
         
-        let cards6days = deck.getCardsDueBy(Date.s.addDays(6))
-        for cardDue in cards6days {
-            deck.delete(cardId: cardDue.cardId)
-        }
+        let deck = Deck(name: "Deck1")
+        deck.add(cards: [card])
+        let cardsToday = deck.getCardsDueBy(Date.s.addDays(daysWait))
+        XCTAssertEqual(cardsToday.count, 1, "The card should be due")
+        XCTAssertEqual(cardsToday[0].dateToShow.s, Date().addDays(daysWait).s, "The card should be due")
+    }
+    
+    func testCardsSomeOverdue() {
+        let card = Card.Builder()
+            .setCardId("1")
+            .setQuestion("question 1")
+            .setAnswer("answer 1")
+            .setDateToShow(Date.s.addDays(-2))
+            .build()
         
-        let cards8days = deck.getCardsDueBy(Date.s.addDays(8))
-        for cardDue in cards8days {
-            deck.delete(cardId: cardDue.cardId)
-        }
+        let deck = Deck(name: "Deck1")
+        deck.add(cards: [card])
+        let cardsToday = deck.getCardsDueBy(Date.s)
+        XCTAssertEqual(cardsToday.count, 1, "The card should be due")
+    }
+    
+    func testCardsOnTime() {
+        let card = Card.Builder()
+            .setCardId("1")
+            .setQuestion("question 1")
+            .setAnswer("answer 1")
+            .build()
         
-        let cards10days = deck.getCardsDueBy(Date.s.addDays(10))
+        let deck = Deck(name: "Deck1")
+        deck.add(cards: [card])
+        let cardsToday = deck.getCardsDueBy(Date.s)
+        XCTAssertEqual(cardsToday.count, 1, "The card should be due")
+    }
+    
+    func testCardsNoneToShow() {
+        let card = Card.Builder()
+            .setCardId("1")
+            .setQuestion("question 1")
+            .setAnswer("answer 1")
+            .setDateToShow(Date.s.addDays(10))
+            .build()
         
-        XCTAssert(Date.isSmallerThan(card1.dateToShow, Date.s.addDays(1)), String(card1.daysToWait))
-        XCTAssert(!Date.isSmallerThan(card2.dateToShow, Date.s.addDays(1)), String(card2.daysToWait))
-        XCTAssert(!Date.isSmallerThan(card3.dateToShow, Date.s.addDays(1)), String(card3.daysToWait))
-        XCTAssert(Date.isSmallerThan(card5.dateToShow, Date.s.addDays(1)), String(card5.daysToWait))
-        
-        XCTAssertEqual(cards1day.count, 2, "There should be two cards for tomorrow, 1 and 5")
-        XCTAssertEqual(cards2days.count, 2, "There should be two cards for 2 days from now, 2 and 3")
-        XCTAssertEqual(cards3days.count, 1, "There should be one card for 3 days from now")
-        XCTAssertEqual(cards6days.count, 1, "There should be one card for 6 days from now")
-        XCTAssertEqual(cards8days.count, 1, "There should be one card for 8 days from now")
-        XCTAssertEqual(cards10days.count, 1, "There should be one card for 10 days from now")
+        let deck = Deck(name: "Deck1")
+        deck.add(cards: [card])
+        let cardsToday = deck.getCardsDueBy(Date.s)
+        XCTAssertEqual(cardsToday.count, 0, "The card should be due")
     }
     
     func testUpdateCard() {
@@ -319,6 +314,36 @@ class BramTests: XCTestCase {
         deck.add(cards: [card1, card2, card3, card4])
         let cardsToDo = deck.getCardsDueBy()
         XCTAssertEqual(cardsToDo.count, 1, "Only card4")
+    }
+    
+    func testSearchQuestion() {
+        var ctr = 0
+        let card0 = Card.Builder()
+            .setCardId("\(ctr)")
+            .setQuestion("question \(ctr) thingy")
+            .setAnswer("answer \(ctr)")
+            .build()
+        
+        ctr += 1
+        let card1 = Card.Builder()
+            .setCardId("\(ctr)")
+            .setQuestion("question \(ctr)")
+            .setAnswer("answer \(ctr)")
+            .build()
+        
+        ctr += 2
+        let card2 = Card.Builder()
+            .setCardId("\(ctr)")
+            .setQuestion("question \(ctr)")
+            .setAnswer("answer \(ctr)")
+            .build()
+        
+        let deck = Deck(name: "testSearch")
+        deck.add(cards: [card0, card1, card2])
+        
+        let searchQuery = "thingy"
+        let searchResults = deck.search(text: searchQuery)
+        XCTAssertEqual(searchResults.count, 1, "Only card0 should be returned")
     }
     
     func testPerformanceExample() {

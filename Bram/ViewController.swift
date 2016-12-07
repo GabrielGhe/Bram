@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FontAwesome_swift
+import SnapKit
 
 class ViewController: UIViewController {
 
@@ -17,14 +19,13 @@ class ViewController: UIViewController {
     
     fileprivate func createView() {
         let label = UILabel()
-        //label.font = UIFont.fontAwesomeOfSize(20)
-        //label.text = String.fontAwesomeIconWithCode("fa-github")
+        label.font = UIFont.fontAwesome(ofSize: 100)
+        label.text = String.fontAwesomeIcon(code: "fa-github")
         label.textColor = UIColor.blue
         self.view.addSubview(label)
-        /*label.snp.makeConstraints { (make) -> Void in
+        label.snp.makeConstraints { (make) -> Void in
             make.center.equalTo(view)
         }
-        */
     }
 }
 
