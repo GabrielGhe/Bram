@@ -11,6 +11,8 @@
 		A6732A361D93B978002AAB60 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A351D93B978002AAB60 /* Card.swift */; };
 		A6732A381D93C4DA002AAB60 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A371D93C4DA002AAB60 /* DateExtension.swift */; };
 		A67373AE1DBB3470009E31F0 /* CardDue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68CFF411DBB27CC00759817 /* CardDue.swift */; };
+		A686BB221DFBDF3C002F1F0E /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A686BB211DFBDF3C002F1F0E /* DeckTableViewCell.swift */; };
+		A686BB241DFBE10F002F1F0E /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A686BB231DFBE10F002F1F0E /* DeckViewController.swift */; };
 		A68AF3BF1DF402970056673C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68AF3BE1DF402970056673C /* StringExtension.swift */; };
 		A68CFF421DBB27CC00759817 /* CardDue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68CFF411DBB27CC00759817 /* CardDue.swift */; };
 		A6BFF3C31DAE758300E47610 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFF3C21DAE758300E47610 /* Scheduler.swift */; };
@@ -18,7 +20,6 @@
 		A6BFF3CB1DAE7B0400E47610 /* TimeAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFF3CA1DAE7B0400E47610 /* TimeAdded.swift */; };
 		A6BFF3CC1DAE7B2600E47610 /* TimeAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFF3CA1DAE7B0400E47610 /* TimeAdded.swift */; };
 		A6D296271D7331A200BF3F54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D296261D7331A200BF3F54 /* AppDelegate.swift */; };
-		A6D296291D7331A200BF3F54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D296281D7331A200BF3F54 /* ViewController.swift */; };
 		A6D2962C1D7331A200BF3F54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6D2962A1D7331A200BF3F54 /* Main.storyboard */; };
 		A6D2962F1D7331A200BF3F54 /* Bram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6D2962D1D7331A200BF3F54 /* Bram.xcdatamodeld */; };
 		A6D296311D7331A200BF3F54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6D296301D7331A200BF3F54 /* Assets.xcassets */; };
@@ -54,13 +55,14 @@
 		9D16F368F100E43BBB74EEAE /* Pods-Bram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bram/Pods-Bram.release.xcconfig"; sourceTree = "<group>"; };
 		A6732A351D93B978002AAB60 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A6732A371D93C4DA002AAB60 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		A686BB211DFBDF3C002F1F0E /* DeckTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckTableViewCell.swift; sourceTree = "<group>"; };
+		A686BB231DFBE10F002F1F0E /* DeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeckViewController.swift; path = ../DeckViewController.swift; sourceTree = "<group>"; };
 		A68AF3BE1DF402970056673C /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A68CFF411DBB27CC00759817 /* CardDue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDue.swift; sourceTree = "<group>"; };
 		A6BFF3C21DAE758300E47610 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		A6BFF3CA1DAE7B0400E47610 /* TimeAdded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAdded.swift; sourceTree = "<group>"; };
 		A6D296231D7331A200BF3F54 /* Bram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D296261D7331A200BF3F54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A6D296281D7331A200BF3F54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A6D2962B1D7331A200BF3F54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A6D2962E1D7331A200BF3F54 /* Bram.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Bram.xcdatamodel; sourceTree = "<group>"; };
 		A6D296301D7331A200BF3F54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,9 +189,10 @@
 				A6BFF3C61DAE75A700E47610 /* utils */,
 				A6BFF3C51DAE759B00E47610 /* logic */,
 				A6BFF3C41DAE758C00E47610 /* models */,
-				A6D296281D7331A200BF3F54 /* ViewController.swift */,
 				A6D2962A1D7331A200BF3F54 /* Main.storyboard */,
 				A6D296321D7331A200BF3F54 /* LaunchScreen.storyboard */,
+				A686BB211DFBDF3C002F1F0E /* DeckTableViewCell.swift */,
+				A686BB231DFBE10F002F1F0E /* DeckViewController.swift */,
 			);
 			path = Bram;
 			sourceTree = "<group>";
@@ -406,10 +409,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A686BB221DFBDF3C002F1F0E /* DeckTableViewCell.swift in Sources */,
 				A6DB0F9B1D991F6400988B1B /* Deck.swift in Sources */,
 				A6BFF3C31DAE758300E47610 /* Scheduler.swift in Sources */,
 				A68AF3BF1DF402970056673C /* StringExtension.swift in Sources */,
-				A6D296291D7331A200BF3F54 /* ViewController.swift in Sources */,
+				A686BB241DFBE10F002F1F0E /* DeckViewController.swift in Sources */,
 				A6BFF3CB1DAE7B0400E47610 /* TimeAdded.swift in Sources */,
 				A6732A381D93C4DA002AAB60 /* DateExtension.swift in Sources */,
 				A68CFF421DBB27CC00759817 /* CardDue.swift in Sources */,
