@@ -28,6 +28,7 @@
 		A6D2964A1D7331A200BF3F54 /* BramUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D296491D7331A200BF3F54 /* BramUITests.swift */; };
 		A6D6744F1E151D080020EB50 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D6744E1E151D080020EB50 /* Storage.swift */; };
 		A6D674511E151D970020EB50 /* StubStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D674501E151D970020EB50 /* StubStorage.swift */; };
+		A6D674531E1525400020EB50 /* SwiftPriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D674521E1525400020EB50 /* SwiftPriorityQueue.swift */; };
 		A6DB0F9B1D991F6400988B1B /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DB0F9A1D991F6400988B1B /* Deck.swift */; };
 		A6F7FC471DAA9B9C00D689BE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A371D93C4DA002AAB60 /* DateExtension.swift */; };
 		A6F7FC491DAA9C3C00D689BE /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DB0F9A1D991F6400988B1B /* Deck.swift */; };
@@ -78,6 +79,7 @@
 		A6D2964B1D7331A200BF3F54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6D6744E1E151D080020EB50 /* Storage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		A6D674501E151D970020EB50 /* StubStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubStorage.swift; sourceTree = "<group>"; };
+		A6D674521E1525400020EB50 /* SwiftPriorityQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftPriorityQueue.swift; sourceTree = "<group>"; };
 		A6DB0F9A1D991F6400988B1B /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		D95A411BBDAB8978911C54BD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -134,6 +136,7 @@
 			children = (
 				A6BFF3C21DAE758300E47610 /* Scheduler.swift */,
 				A6BFF3CA1DAE7B0400E47610 /* TimeAdded.swift */,
+				A6D674521E1525400020EB50 /* SwiftPriorityQueue.swift */,
 			);
 			name = logic;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				A6D2962F1D7331A200BF3F54 /* Bram.xcdatamodeld in Sources */,
 				A6D296271D7331A200BF3F54 /* AppDelegate.swift in Sources */,
 				A6732A361D93B978002AAB60 /* Card.swift in Sources */,
+				A6D674531E1525400020EB50 /* SwiftPriorityQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +494,7 @@
 /* Begin XCBuildConfiguration section */
 		A6D2964C1D7331A200BF3F54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C207BF95C9E1EF0B4FAAB6A /* Pods-Bram.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -537,6 +542,7 @@
 		};
 		A6D2964D1D7331A200BF3F54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D16F368F100E43BBB74EEAE /* Pods-Bram.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -606,6 +612,7 @@
 		};
 		A6D296521D7331A200BF3F54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C207BF95C9E1EF0B4FAAB6A /* Pods-Bram.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = BramTests/Info.plist;
@@ -619,6 +626,7 @@
 		};
 		A6D296531D7331A200BF3F54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D16F368F100E43BBB74EEAE /* Pods-Bram.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = BramTests/Info.plist;

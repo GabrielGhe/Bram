@@ -19,25 +19,26 @@ class DeckViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadContent()
         hideSearch()
         initializeView()
         setDelegates()
         addDeckButton()
+        loadContent()
     }
     
     fileprivate func loadContent() {
-        self.storage = StubStorage()
+        storage = StubStorage()
         if let decks = self.storage?.getDecks() {
             data = decks
         }
+        tableView.reloadData()
     }
     
     fileprivate func initializeView() {
-        self.search.searchBarStyle = UISearchBarStyle.minimal;
-        self.search.barTintColor = UIColor.white
-        self.tableView.estimatedRowHeight = 40
-        self.tableView.rowHeight = UITableViewAutomaticDimension
+        search.searchBarStyle = UISearchBarStyle.minimal;
+        search.barTintColor = UIColor.white
+        tableView.estimatedRowHeight = 40
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     fileprivate func setDelegates() {
@@ -62,10 +63,13 @@ class DeckViewController: UIViewController, UITableViewDataSource, UITableViewDe
         addButton.layer.shadowOffset = CGSize(width: 0.5, height:2.0);
         addButton.layer.shadowOpacity = 1.0;
         addButton.layer.shadowRadius = 0.0;
+        
+        let touchRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleAdd(_:)))
+        addButton.addGestureRecognizer(touchRecognizer)
     }
     
     fileprivate func hideSearch() {
-        self.tableView.setContentOffset(CGPoint(x: 0, y: search.bounds.height), animated: false)
+        tableView.setContentOffset(CGPoint(x: 0, y: search.bounds.height), animated: false)
     }
     
     // How many sections (only 1 in our case)
@@ -85,5 +89,9 @@ class DeckViewController: UIViewController, UITableViewDataSource, UITableViewDe
         cell.createView(withDeck: deck)
         
         return cell
+    }
+    
+    @objc func handleAdd(_ recognizer: UITapGestureRecognizer) {
+        print("Works")
     }
 }

@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import SwiftPriorityQueue
+
 @testable import Bram
 
 class BramTests: XCTestCase {
