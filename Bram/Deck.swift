@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Deckg {
+class Deck {
     private var cardMap: [String:Card]
     private(set) dynamic var name: String
     private(set) dynamic var deckId: String
