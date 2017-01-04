@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import RealmSwift
 
-class Deck : Object {
+class Deckg {
     private var cardMap: [String:Card]
     private(set) dynamic var name: String
     private(set) dynamic var deckId: String

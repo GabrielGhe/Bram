@@ -9,18 +9,19 @@
 import UIKit
 import RealmSwift
 
-class Card : Object {
-    private(set) dynamic var cardId: String
-    private(set) dynamic var deckId: String
-    private(set) dynamic var question: String
-    private(set) dynamic var answer: String
-    private(set) dynamic var creationDate: Date
-    private(set) dynamic var associatedCardIds: [String]
-    private(set) dynamic var dateToShow: Date
-    private(set) dynamic var daysToWait: Int
+open class Card : Object {
+    private(set) dynamic var cardId: String = UUID().uuidString
+    private(set) dynamic var deckId: String = UUID().uuidString
+    private(set) dynamic var question: String = ""
+    private(set) dynamic var answer: String = ""
+    private(set) dynamic var creationDate: Date = Date.s
+    private(set) dynamic var associatedCardIds: [String] = []
+    private(set) dynamic var dateToShow: Date = Date.s
+    private(set) dynamic var daysToWait: Int = 1
     
-    required public init(cardId:String, deckId:String, question:String, answer:String,
+    convenience init(cardId:String, deckId:String, question:String, answer:String,
                      creationDate: Date, associatedCards: [String], dateToShow: Date, daysToWait: Int) {
+        self.init()
         self.cardId = cardId
         self.deckId = deckId
         self.question = question
@@ -42,14 +43,15 @@ class Card : Object {
         fileprivate var daysToWait: Int
         
         required init() {
-            cardId = UUID().uuidString
-            deckId = UUID().uuidString
-            question = ""
-            answer = ""
-            associatedCards = []
-            creationDate = Date.s
-            dateToShow = Date.s
-            daysToWait = 1
+            let tempCard = Card()
+            cardId = tempCard.cardId
+            deckId = tempCard.deckId
+            question = tempCard.question
+            answer = tempCard.answer
+            associatedCards = tempCard.associatedCardIds
+            creationDate = tempCard.creationDate
+            dateToShow = tempCard.dateToShow
+            daysToWait = tempCard.daysToWait
         }
         
         func setCardId(_ id: String) -> Card.Builder  {
@@ -117,7 +119,6 @@ class Card : Object {
     }
 }
 
-extension Card : Equatable {}
 extension Card : Comparable {}
 
 public func ==(left: Card, right: Card) -> Bool {

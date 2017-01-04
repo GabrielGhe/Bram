@@ -28,7 +28,7 @@ class DeckViewController: UIViewController, UITableViewDataSource, UITableViewDe
     
     fileprivate func loadContent() {
         storage = StubStorage()
-        if let decks = self.storage?.getDecks() {
+        if let decks = self.storage?.decks {
             data = decks
         }
         tableView.reloadData()
