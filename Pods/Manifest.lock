@@ -1,10 +1,16 @@
 PODS:
   - FontAwesome.swift (1.1.0)
+  - Realm (2.1.2):
+    - Realm/Headers (= 2.1.2)
+  - Realm/Headers (2.1.2)
+  - RealmSwift (2.1.2):
+    - Realm (= 2.1.2)
   - SnapKit (3.0.2)
   - SwiftPriorityQueue (1.1.1)
 
 DEPENDENCIES:
   - FontAwesome.swift (from `https://github.com/thii/FontAwesome.swift.git`, branch `master`)
+  - RealmSwift
   - SnapKit (~> 3.0)
   - SwiftPriorityQueue (~> 1.1)
 
@@ -20,9 +26,11 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   FontAwesome.swift: beb63f208f69f998d00fdb2d4d5d8813b494f3d8
+  Realm: efe855f4d977c8ce5a82d3116d9f1ff155a6550c
+  RealmSwift: 17d6ee30b6f9df86364408c2197492e33bfea567
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SwiftPriorityQueue: cced1a141ab3cdbbd00fe1ec3b831c69a54cc2fd
 
-PODFILE CHECKSUM: 2d7b4205e635aba1b02605302a0d58fa7a73b527
+PODFILE CHECKSUM: eab3fbcb5719a5585c6b34de111f0041347b31b9
 
 COCOAPODS: 1.1.1
