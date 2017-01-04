@@ -10,9 +10,15 @@ import UIKit
 
 class StubStorage: Storage {
     
+    fileprivate var internalDecks:[Deck] = []
+    
+    public var decks: [Deck] {
+        return internalDecks
+    }
+    
     // MARK: Storage
     
-    func getDecks() -> [Deck] {
+    init() {
         let chineseDeck = Deck(name: "Chinese")
         let lifeDeck = Deck(name: "Life")
         let schoolDeck = Deck(name: "School")
@@ -21,14 +27,14 @@ class StubStorage: Storage {
         populateLifeDeck(deck: lifeDeck)
         populateSchoolDeck(deck: schoolDeck)
         
-        return [chineseDeck, lifeDeck, schoolDeck]
+        internalDecks = [chineseDeck, lifeDeck, schoolDeck]
     }
     
-    func saveDeck() {
+    func save(deck: Deck) {
         
     }
     
-    func saveCard() {
+    func save(card: Card) {
         
     }
     

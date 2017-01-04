@@ -7,7 +7,7 @@
 //
 
 protocol Storage {
-    func getDecks() -> [Deck]
-    func saveDeck()
-    func saveCard()
+    var decks: [Deck] { get }
+    func save(deck: Deck)
+    func save(card: Card)
 }

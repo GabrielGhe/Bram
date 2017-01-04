@@ -9,17 +9,18 @@
 import RealmSwift
 
 class FileStorage : Storage {
-    let realm = try! Realm()
+    fileprivate let realm = try! Realm()
+    fileprivate var internalDecks:[Deck] = []
     
-    func getDecks() -> [Deck] {
+    public var decks: [Deck] {
+        return internalDecks
+    }
+    
+    func save(deck: Deck) {
         
     }
     
-    func saveDeck() {
-        
-    }
-    
-    func saveCard() {
+    func save(card: Card) {
         
     }
 }
