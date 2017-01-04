@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import RealmSwift
 
-class Deck {
+class Deck : Object {
     private var cardMap: [String:Card]
-    private(set) var name: String
-    private(set) var deckId: String
-    private(set) var cardsPerDay: Int
-    private(set) var creationDate: Date
+    private(set) dynamic var name: String
+    private(set) dynamic var deckId: String
+    private(set) dynamic var cardsPerDay: Int
+    private(set) dynamic var creationDate: Date
     
-    public var cardIds: [String]{
+    public var cardIds: [String] {
         return cardMap.keys.sorted()
     }
     
@@ -27,7 +28,7 @@ class Deck {
         self.init(deckId: UUID().uuidString, name: name, cards: [], cardsPerDay: 10, creationDate: Date.s)
     }
     
-    init(deckId: String, name: String, cards: [Card], cardsPerDay: Int, creationDate: Date) {
+    required init(deckId: String, name: String, cards: [Card], cardsPerDay: Int, creationDate: Date) {
         self.deckId = deckId
         self.name = name
         self.cardsPerDay = cardsPerDay

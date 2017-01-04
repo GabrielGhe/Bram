@@ -7,18 +7,19 @@
 //
 
 import UIKit
+import RealmSwift
 
-open class Card {
-    private(set) var cardId: String
-    private(set) var deckId: String
-    private(set) var question: String
-    private(set) var answer: String
-    private(set) var creationDate: Date
-    private(set) var associatedCardIds: [String]
-    private(set) var dateToShow: Date
-    private(set) var daysToWait: Int
+class Card : Object {
+    private(set) dynamic var cardId: String
+    private(set) dynamic var deckId: String
+    private(set) dynamic var question: String
+    private(set) dynamic var answer: String
+    private(set) dynamic var creationDate: Date
+    private(set) dynamic var associatedCardIds: [String]
+    private(set) dynamic var dateToShow: Date
+    private(set) dynamic var daysToWait: Int
     
-    fileprivate init(cardId:String, deckId:String, question:String, answer:String,
+    required public init(cardId:String, deckId:String, question:String, answer:String,
                      creationDate: Date, associatedCards: [String], dateToShow: Date, daysToWait: Int) {
         self.cardId = cardId
         self.deckId = deckId
@@ -40,7 +41,7 @@ open class Card {
         fileprivate var dateToShow: Date
         fileprivate var daysToWait: Int
         
-        init() {
+        required init() {
             cardId = UUID().uuidString
             deckId = UUID().uuidString
             question = ""

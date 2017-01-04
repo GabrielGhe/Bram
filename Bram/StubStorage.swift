@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StubStorage: Storage {
+class StubStorage : Storage {
     
     fileprivate var internalDecks:[Deck] = []
     

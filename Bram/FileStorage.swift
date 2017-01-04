@@ -9,11 +9,16 @@
 import RealmSwift
 
 class FileStorage : Storage {
+    
+    // MARK: Variables
+    
     fileprivate let realm = try! Realm()
-    fileprivate var internalDecks:[Deck] = []
+    
+    // MARK: Storage
     
     public var decks: [Deck] {
-        return internalDecks
+        let decks = realm.objects(Deck.self)
+        
     }
     
     func save(deck: Deck) {
@@ -23,4 +28,6 @@ class FileStorage : Storage {
     func save(card: Card) {
         
     }
+    
+    // MARK: Helper Methods
 }
