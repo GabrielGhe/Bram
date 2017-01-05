@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import RealmSwift
 
-class Deck {
-    private var cardMap: [String:Card]
-    private(set) dynamic var name: String
-    private(set) dynamic var deckId: String
-    private(set) dynamic var cardsPerDay: Int
-    private(set) dynamic var creationDate: Date
+class Deck : Object {
+    private var cardMap: [String:Card] = [:]
+    private(set) dynamic var name: String = ""
+    private(set) dynamic var deckId: String = UUID().uuidString
+    private(set) dynamic var cardsPerDay: Int = 10
+    private(set) dynamic var creationDate: Date = Date.s
     
     public var cardIds: [String] {
         return cardMap.keys.sorted()
@@ -27,7 +28,8 @@ class Deck {
         self.init(deckId: UUID().uuidString, name: name, cards: [], cardsPerDay: 10, creationDate: Date.s)
     }
     
-    required init(deckId: String, name: String, cards: [Card], cardsPerDay: Int, creationDate: Date) {
+    convenience init(deckId: String, name: String, cards: [Card], cardsPerDay: Int, creationDate: Date) {
+        self.init()
         self.deckId = deckId
         self.name = name
         self.cardsPerDay = cardsPerDay
@@ -72,8 +74,8 @@ class Deck {
     func getAssociatedCardsDue(mainCardId: String) -> [CardDue] {
         var cardDues: [CardDue] = []
         if let mainCard = cardMap[mainCardId] {
-            for cardId in mainCard.associatedCardIds {
-                guard let card = cardMap[cardId] else {
+            for cardDue in mainCard.associatedCardIds {
+                guard let card = cardMap[cardDue.cardId] else {
                     continue
                 }
                 cardDues.append(CardDue(card: card, isReminder: true))

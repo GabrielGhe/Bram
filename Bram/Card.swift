@@ -15,12 +15,12 @@ open class Card : Object {
     private(set) dynamic var question: String = ""
     private(set) dynamic var answer: String = ""
     private(set) dynamic var creationDate: Date = Date.s
-    private(set) dynamic var associatedCardIds: [String] = []
+    private(set) var associatedCardIds: List<CardDue> = List<CardDue>()
     private(set) dynamic var dateToShow: Date = Date.s
     private(set) dynamic var daysToWait: Int = 1
     
     convenience init(cardId:String, deckId:String, question:String, answer:String,
-                     creationDate: Date, associatedCards: [String], dateToShow: Date, daysToWait: Int) {
+                     creationDate: Date, associatedCards: List<CardDue>, dateToShow: Date, daysToWait: Int) {
         self.init()
         self.cardId = cardId
         self.deckId = deckId
@@ -38,7 +38,7 @@ open class Card : Object {
         fileprivate var question: String
         fileprivate var answer: String
         fileprivate var creationDate: Date
-        fileprivate var associatedCards: [String]
+        fileprivate var associatedCards: List<CardDue>
         fileprivate var dateToShow: Date
         fileprivate var daysToWait: Int
         
@@ -79,7 +79,7 @@ open class Card : Object {
             return self
         }
         
-        func setAssociatedCards(_ associatedCards: [String]) -> Card.Builder {
+        func setAssociatedCards(_ associatedCards: List<CardDue>) -> Card.Builder {
             self.associatedCards = associatedCards
             return self
         }

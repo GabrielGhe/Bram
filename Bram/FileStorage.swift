@@ -16,7 +16,14 @@ class FileStorage : Storage {
     // MARK: Storage
     
     public var decks: [Deck] {
-        return []
+        let results = realm.objects(Deck.self)
+        var decks: [Deck] = []
+        
+        for deck in results {
+            decks.append(deck)
+        }
+        
+        return decks
     }
     
     func save(deck: Deck) {

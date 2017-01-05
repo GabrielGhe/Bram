@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import RealmSwift
 
-open class CardDue {
-    private(set) var cardId: String
-    private(set) var deckId: String
-    private(set) var dateToShow: Date
-    private(set) var isReminder: Bool
+open class CardDue : Object {
+    private(set) dynamic var cardId: String = UUID().uuidString
+    private(set) dynamic var deckId: String = UUID().uuidString
+    private(set) dynamic var dateToShow: Date = Date.s
+    private(set) dynamic var isReminder: Bool = false
     
     convenience init(card: Card) {
         self.init(card: card, isReminder: false)
@@ -25,7 +26,8 @@ open class CardDue {
                   isReminder: isReminder)
     }
     
-    init(cardId: String, deckId: String, dateToShow: Date, isReminder: Bool = false) {
+    convenience init(cardId: String, deckId: String, dateToShow: Date, isReminder: Bool = false) {
+        self.init()
         self.cardId = cardId
         self.deckId = deckId
         self.dateToShow = dateToShow
@@ -33,7 +35,6 @@ open class CardDue {
     }
 }
 
-extension CardDue : Equatable {}
 extension CardDue : Comparable {}
 
 public func ==(left: CardDue, right: CardDue) -> Bool {
