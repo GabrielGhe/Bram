@@ -10,14 +10,14 @@ import UIKit
 import RealmSwift
 
 open class Card : Object {
-    private(set) dynamic var cardId: String = UUID().uuidString
-    private(set) dynamic var deckId: String = UUID().uuidString
-    private(set) dynamic var question: String = ""
-    private(set) dynamic var answer: String = ""
-    private(set) dynamic var creationDate: Date = Date.s
-    private(set) var associatedCardIds: List<CardDue> = List<CardDue>()
-    private(set) dynamic var dateToShow: Date = Date.s
-    private(set) dynamic var daysToWait: Int = 1
+    dynamic var cardId: String = UUID().uuidString
+    dynamic var deckId: String = UUID().uuidString
+    dynamic var question: String = ""
+    dynamic var answer: String = ""
+    dynamic var creationDate: Date = Date.s
+    var associatedCardIds: List<CardDue> = List<CardDue>()
+    dynamic var dateToShow: Date = Date.s
+    dynamic var daysToWait: Int = 1
     
     convenience init(cardId:String, deckId:String, question:String, answer:String,
                      creationDate: Date, associatedCards: List<CardDue>, dateToShow: Date, daysToWait: Int) {

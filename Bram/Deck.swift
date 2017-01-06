@@ -11,10 +11,10 @@ import RealmSwift
 
 class Deck : Object {
     private var cardMap: [String:Card] = [:]
-    private(set) dynamic var name: String = ""
-    private(set) dynamic var deckId: String = UUID().uuidString
-    private(set) dynamic var cardsPerDay: Int = 10
-    private(set) dynamic var creationDate: Date = Date.s
+    dynamic var name: String = ""
+    dynamic var deckId: String = UUID().uuidString
+    dynamic var cardsPerDay: Int = 10
+    dynamic var creationDate: Date = Date.s
     
     public var cardIds: [String] {
         return cardMap.keys.sorted()

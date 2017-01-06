@@ -15,23 +15,40 @@ class FileStorage : Storage {
     
     // MARK: Storage
     
-    public var decks: [Deck] {
+    func getDecks() -> [Deck] {
         let results = realm.objects(Deck.self)
         var decks: [Deck] = []
         
         for deck in results {
+            let cards = getCards(forDeck: deck.deckId)
+            deck.add(cards: cards)
             decks.append(deck)
         }
         
         return decks
     }
     
-    func save(deck: Deck) {
+    func getCards(forDeck deckId: String) -> [Card] {
+        let results = realm.objects(Card.self).filter("deckId == \(deckId)")
+        var cards: [Card] = []
         
+        for card in results {
+            cards.append(card)
+        }
+        
+        return cards
+    }
+    
+    func save(deck: Deck) {
+        try! realm.write {
+            realm.add(deck)
+        }
     }
     
     func save(card: Card) {
-        
+        try! realm.write {
+            realm.add(card)
+        }
     }
     
     // MARK: Helper Methods

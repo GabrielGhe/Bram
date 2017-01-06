@@ -618,6 +618,7 @@
 		};
 		A6D296521D7331A200BF3F54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 683EB147F4A12E5563D0BF59 /* Pods-Bram.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = BramTests/Info.plist;
@@ -631,6 +632,7 @@
 		};
 		A6D296531D7331A200BF3F54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 683EB147F4A12E5563D0BF59 /* Pods-Bram.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = BramTests/Info.plist;

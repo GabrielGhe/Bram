@@ -12,10 +12,6 @@ class StubStorage : Storage {
     
     fileprivate var internalDecks:[Deck] = []
     
-    public var decks: [Deck] {
-        return internalDecks
-    }
-    
     // MARK: Storage
     
     init() {
@@ -28,6 +24,22 @@ class StubStorage : Storage {
         populateSchoolDeck(deck: schoolDeck)
         
         internalDecks = [chineseDeck, lifeDeck, schoolDeck]
+    }
+    
+    func getDecks() -> [Deck] {
+        return internalDecks
+    }
+    
+    func getCards(forDeck deckId: String) -> [Card] {
+        var cards: [Card] = []
+        
+        for tempDeck in getDecks() {
+            if (tempDeck.deckId == deckId) {
+                cards = tempDeck.cards
+                break
+            }
+        }
+        return cards
     }
     
     func save(deck: Deck) {
