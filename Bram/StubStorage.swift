@@ -53,7 +53,7 @@ class StubStorage : Storage {
     // MARK: Helped methods
     
     fileprivate func populateChineseDeck(deck: Deck) {
-        let card1 = Card.Builder()
+        let card1 = CardBuilder()
             .setCardId("1")
             .setDeckId(deck.deckId)
             .setQuestion("ni xian wo le")
@@ -61,7 +61,7 @@ class StubStorage : Storage {
             .setDateToShow(Date.e.addDays(4))
             .build()
         
-        let card2 = Card.Builder()
+        let card2 = CardBuilder()
             .setCardId("2")
             .setDeckId(deck.deckId)
             .setQuestion("wo ai ni")
@@ -69,7 +69,7 @@ class StubStorage : Storage {
             .setDateToShow(Date.e.addDays(3))
             .build()
         
-        let card3 = Card.Builder()
+        let card3 = CardBuilder()
             .setCardId("3")
             .setDeckId(deck.deckId)
             .setQuestion("ni xiang qu nali")
@@ -82,7 +82,7 @@ class StubStorage : Storage {
     }
     
     fileprivate func populateLifeDeck(deck: Deck) {
-        let card1 = Card.Builder()
+        let card1 = CardBuilder()
             .setCardId("4")
             .setDeckId(deck.deckId)
             .setQuestion("Word for 4")
@@ -90,7 +90,7 @@ class StubStorage : Storage {
             .setDateToShow(Date.e.addDays(2))
             .build()
         
-        let card2 = Card.Builder()
+        let card2 = CardBuilder()
             .setCardId("5")
             .setDeckId(deck.deckId)
             .setQuestion("Word for 7")
@@ -98,14 +98,14 @@ class StubStorage : Storage {
             .setDateToShow(Date.e.addDays(6))
             .build()
         
-        let card3 = Card.Builder()
+        let card3 = CardBuilder()
             .setCardId("6")
             .setDeckId(deck.deckId)
             .setQuestion("Word for 9")
             .setAnswer("Bee")
             .build()
         
-        let card4 = Card.Builder()
+        let card4 = CardBuilder()
             .setCardId("7")
             .setDeckId(deck.deckId)
             .setQuestion("Word for 0")
@@ -119,7 +119,7 @@ class StubStorage : Storage {
     }
     
     fileprivate func populateSchoolDeck(deck: Deck) {
-        let card1 = Card.Builder()
+        let card1 = CardBuilder()
             .setCardId("8")
             .setDeckId(deck.deckId)
             .setQuestion("What is top down programming?")
@@ -127,7 +127,7 @@ class StubStorage : Storage {
             .setDateToShow(Date.e.addDays(5))
             .build()
         
-        let card2 = Card.Builder()
+        let card2 = CardBuilder()
             .setCardId("9")
             .setDeckId(deck.deckId)
             .setQuestion("What is SLAP?")

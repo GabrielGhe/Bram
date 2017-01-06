@@ -18,7 +18,7 @@ class Scheduler {
         let temp = Double(card.daysToWait) * answer.rawValue
         let daysToWait = Int(temp + 0.5) + 1
         
-        return Card.Builder()
+        return CardBuilder()
             .setCard(card)
             .setDaysToWait(daysToWait)
             .setDateToShow(date.addDays(daysToWait))
