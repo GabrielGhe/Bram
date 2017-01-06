@@ -7,11 +7,13 @@
 //
 
 import XCTest
+import RealmSwift
 
 @testable import Bram
 
 class BramStorageTests: XCTestCase {
-    override func setUp() {
+    
+    override func setUp() {g
         super.setUp()
     }
     
@@ -48,6 +50,28 @@ class BramStorageTests: XCTestCase {
         let schoolDeck = storage.getDecks()[2]
         
         XCTAssertEqual(schoolDeck.cards.count, deckSchoolCardCount, "Should retrieve 2 cards")
+    }
+    
+    func testRealStorage() {
+        let storage = FileStorage()
+        let card1 = CardBuilder()
+            .setCardId("1")
+            .setDeckId("321")
+            .setQuestion("ni xian wo le")
+            .setAnswer("Did you miss me")
+            .setDateToShow(Date.e.addDays(4))
+            .build()
+        
+        storage.save(card: card1)
+        guard let retrievedCard = storage.getCard(byId: card1.cardId) else {
+            XCTAssertEqual(false, true, "Did not retrieve a card")
+            return
+        }
+        
+        XCTAssertEqual(retrievedCard.deckId, card1.deckId, "Should retrieve same deckId")
+        XCTAssertEqual(retrievedCard.question, card1.question, "Should retrieve same deckId")
+        
+        storage.delete(card: card1)
     }
 }
 

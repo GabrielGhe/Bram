@@ -39,6 +39,12 @@ class FileStorage : Storage {
         return cards
     }
     
+    func getCard(byId id: String) -> Card? {
+        let predicate = NSPredicate(format: "cardId = %@", id)
+        let card = realm.objects(Card.self).filter(predicate).first
+        return card
+    }
+    
     func save(deck: Deck) {
         try! realm.write {
             realm.add(deck)
@@ -48,6 +54,18 @@ class FileStorage : Storage {
     func save(card: Card) {
         try! realm.write {
             realm.add(card)
+        }
+    }
+    
+    func delete(deck: Deck) {
+        try! realm.write {
+            realm.delete(deck)
+        }
+    }
+    
+    func delete(card: Card) {
+        try! realm.write {
+            realm.delete(card)
         }
     }
     
