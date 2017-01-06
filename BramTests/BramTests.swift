@@ -29,7 +29,7 @@ class BramTests: XCTestCase {
     
     func testAddCardToDeck() {
         let deck = Deck(name: "addCardDeck")
-        let card = Card.Builder()
+        let card = CardBuilder()
             .setCardId("1234")
             .setQuestion("question 1")
             .setAnswer("answer 1")
@@ -40,12 +40,12 @@ class BramTests: XCTestCase {
     }
     
     func testCardMorePriorityThanOther() {
-        let card1 = Card.Builder()
+        let card1 = CardBuilder()
             .setCardId("1234")
             .setQuestion("question 1")
             .setAnswer("answer 1")
             .build()
-        let card2 = Card.Builder()
+        let card2 = CardBuilder()
             .setCardId("2345")
             .setQuestion("question 2")
             .setAnswer("answer 2")
@@ -55,13 +55,13 @@ class BramTests: XCTestCase {
     }
     
     func testPeek() {
-        let card1 = Card.Builder()
+        let card1 = CardBuilder()
             .setCardId("1234")
             .setQuestion("question 1")
             .setAnswer("answer 1")
             .build()
         
-        let card2 = Card.Builder()
+        let card2 = CardBuilder()
             .setCardId("2345")
             .setQuestion("question 2")
             .setAnswer("answer 2")
@@ -77,25 +77,25 @@ class BramTests: XCTestCase {
     }
     
     func testGetCardsDue() {
-        let card1 = Card.Builder()
+        let card1 = CardBuilder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
             .build()
         
-        let card2 = Card.Builder()
+        let card2 = CardBuilder()
             .setCard(card1)
             .setCardId("2")
             .setDateToShow(Date().addDays(1))
             .build()
         
-        let card3 = Card.Builder()
+        let card3 = CardBuilder()
             .setCard(card1)
             .setCardId("3")
             .setDateToShow(Date().addDays(1))
             .build()
         
-        let card4 = Card.Builder()
+        let card4 = CardBuilder()
             .setCard(card1)
             .setCardId("4")
             .setDateToShow(Date().addDays(2))
@@ -124,7 +124,7 @@ class BramTests: XCTestCase {
     
     func testScheduleShortWaitBad() {
         let delay = 1
-        var card = Card.Builder()
+        var card = CardBuilder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
@@ -140,7 +140,7 @@ class BramTests: XCTestCase {
     
     func testScheduleShortWaitOk() {
         let delay = 2
-        var card = Card.Builder()
+        var card = CardBuilder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
@@ -156,7 +156,7 @@ class BramTests: XCTestCase {
     
     func testScheduleShortWaitGreat() {
         let delay = 3
-        var card = Card.Builder()
+        var card = CardBuilder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
@@ -172,7 +172,7 @@ class BramTests: XCTestCase {
     
     func testScheduleLongWaitBad() {
         let daysWait = 1
-        var card = Card.Builder()
+        var card = CardBuilder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
@@ -191,7 +191,7 @@ class BramTests: XCTestCase {
     
     func testScheduleLongWaitOk() {
         let daysWait = 6
-        var card = Card.Builder()
+        var card = CardBuilder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
@@ -210,7 +210,7 @@ class BramTests: XCTestCase {
     
     func testScheduleLongWaitGreat() {
         let daysWait = 10
-        var card = Card.Builder()
+        var card = CardBuilder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
@@ -228,7 +228,7 @@ class BramTests: XCTestCase {
     }
     
     func testCardsSomeOverdue() {
-        let card = Card.Builder()
+        let card = CardBuilder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
@@ -242,7 +242,7 @@ class BramTests: XCTestCase {
     }
     
     func testCardsOnTime() {
-        let card = Card.Builder()
+        let card = CardBuilder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
@@ -255,7 +255,7 @@ class BramTests: XCTestCase {
     }
     
     func testCardsNoneToShow() {
-        let card = Card.Builder()
+        let card = CardBuilder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
@@ -269,7 +269,7 @@ class BramTests: XCTestCase {
     }
     
     func testUpdateCard() {
-        var card1 = Card.Builder()
+        var card1 = CardBuilder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
@@ -284,7 +284,7 @@ class BramTests: XCTestCase {
     }
     
     func testGetRelated() {
-        let card1 = Card.Builder()
+        let card1 = CardBuilder()
             .setCardId("1")
             .setQuestion("question 1")
             .setAnswer("answer 1")
@@ -292,20 +292,25 @@ class BramTests: XCTestCase {
             .setDaysToWait(2)
             .build()
         
-        let card2 = Card.Builder()
+        let card2 = CardBuilder()
             .setCard(card1)
             .setCardId("2")
             .build()
         
-        let card3 = Card.Builder()
+        let card3 = CardBuilder()
             .setCard(card1)
             .setCardId("3")
             .build()
         
-        let card4 = Card.Builder()
+        let cards = List<CardDue>()
+        cards.append(CardDue(card: card1))
+        cards.append(CardDue(card: card2))
+        cards.append(CardDue(card: card3))
+        
+        let card4 = CardBuilder()
             .setCard(card1)
             .setCardId("4")
-            .setAssociatedCards([card1.cardId, card2.cardId, card3.cardId])
+            .setAssociatedCards(cards)
             .setDaysToWait(0)
             .setDateToShow(Date())
             .build()
@@ -318,21 +323,21 @@ class BramTests: XCTestCase {
     
     func testSearchQuestion() {
         var ctr = 0
-        let card0 = Card.Builder()
+        let card0 = CardBuilder()
             .setCardId("\(ctr)")
             .setQuestion("question \(ctr) thingy")
             .setAnswer("answer \(ctr)")
             .build()
         
         ctr += 1
-        let card1 = Card.Builder()
+        let card1 = CardBuilder()
             .setCardId("\(ctr)")
             .setQuestion("question \(ctr)")
             .setAnswer("answer \(ctr)")
             .build()
         
         ctr += 2
-        let card2 = Card.Builder()
+        let card2 = CardBuilder()
             .setCardId("\(ctr)")
             .setQuestion("question \(ctr)")
             .setAnswer("answer \(ctr)")

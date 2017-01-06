@@ -1,0 +1,6 @@
+framework module Pods_BramTests {
+  umbrella header "Pods-BramTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

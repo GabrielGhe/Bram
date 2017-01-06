@@ -7,19 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06A178DCD607607DD1275F7E /* Pods_BramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDDEE1AE2D8A9D847ED1564 /* Pods_BramTests.framework */; };
 		4EE7170E60C52C4E8AAC47EF /* Pods_Bram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704C997C580BF027F2A5306C /* Pods_Bram.framework */; };
+		A60C2C731E20327600FE36D8 /* CardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60C2C721E20327600FE36D8 /* CardBuilder.swift */; };
 		A67233C61E1D432B00E774DA /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67233C51E1D432B00E774DA /* DeckViewController.swift */; };
 		A67233C81E1D435C00E774DA /* BramStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67233C71E1D435C00E774DA /* BramStorageTests.swift */; };
 		A6732A361D93B978002AAB60 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A351D93B978002AAB60 /* Card.swift */; };
 		A6732A381D93C4DA002AAB60 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A371D93C4DA002AAB60 /* DateExtension.swift */; };
-		A67373AE1DBB3470009E31F0 /* CardDue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68CFF411DBB27CC00759817 /* CardDue.swift */; };
 		A686BB221DFBDF3C002F1F0E /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A686BB211DFBDF3C002F1F0E /* DeckTableViewCell.swift */; };
 		A68AF3BF1DF402970056673C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68AF3BE1DF402970056673C /* StringExtension.swift */; };
 		A68CFF421DBB27CC00759817 /* CardDue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68CFF411DBB27CC00759817 /* CardDue.swift */; };
 		A6BFF3C31DAE758300E47610 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFF3C21DAE758300E47610 /* Scheduler.swift */; };
-		A6BFF3C91DAE7AE000E47610 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFF3C21DAE758300E47610 /* Scheduler.swift */; };
 		A6BFF3CB1DAE7B0400E47610 /* TimeAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFF3CA1DAE7B0400E47610 /* TimeAdded.swift */; };
-		A6BFF3CC1DAE7B2600E47610 /* TimeAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFF3CA1DAE7B0400E47610 /* TimeAdded.swift */; };
 		A6D296271D7331A200BF3F54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D296261D7331A200BF3F54 /* AppDelegate.swift */; };
 		A6D2962C1D7331A200BF3F54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6D2962A1D7331A200BF3F54 /* Main.storyboard */; };
 		A6D2962F1D7331A200BF3F54 /* Bram.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A6D2962D1D7331A200BF3F54 /* Bram.xcdatamodeld */; };
@@ -32,9 +31,6 @@
 		A6D674531E1525400020EB50 /* SwiftPriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D674521E1525400020EB50 /* SwiftPriorityQueue.swift */; };
 		A6DB0F9B1D991F6400988B1B /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DB0F9A1D991F6400988B1B /* Deck.swift */; };
 		A6E55EC11E1D3FD40057EF3E /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6E55EC01E1D3FD40057EF3E /* FileStorage.swift */; };
-		A6F7FC471DAA9B9C00D689BE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A371D93C4DA002AAB60 /* DateExtension.swift */; };
-		A6F7FC491DAA9C3C00D689BE /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6DB0F9A1D991F6400988B1B /* Deck.swift */; };
-		A6F7FC4A1DAA9C3F00D689BE /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A351D93B978002AAB60 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,9 +51,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2B4B8BC54D33BA53A67C5319 /* Pods-BramTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BramTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-BramTests/Pods-BramTests.release.xcconfig"; sourceTree = "<group>"; };
 		470F4757268889A71A03FB3A /* Pods-Bram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bram/Pods-Bram.debug.xcconfig"; sourceTree = "<group>"; };
+		65F4189FD482EAEA16D06560 /* Pods-BramTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BramTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BramTests/Pods-BramTests.debug.xcconfig"; sourceTree = "<group>"; };
 		683EB147F4A12E5563D0BF59 /* Pods-Bram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bram/Pods-Bram.release.xcconfig"; sourceTree = "<group>"; };
 		704C997C580BF027F2A5306C /* Pods_Bram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A60C2C721E20327600FE36D8 /* CardBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBuilder.swift; sourceTree = "<group>"; };
 		A67233C51E1D432B00E774DA /* DeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = "<group>"; };
 		A67233C71E1D435C00E774DA /* BramStorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BramStorageTests.swift; sourceTree = "<group>"; };
 		A6732A351D93B978002AAB60 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		A6DB0F9A1D991F6400988B1B /* Deck.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
 		A6E55EC01E1D3FD40057EF3E /* FileStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
 		D95A411BBDAB8978911C54BD /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DDDDEE1AE2D8A9D847ED1564 /* Pods_BramTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BramTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06A178DCD607607DD1275F7E /* Pods_BramTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,6 +120,8 @@
 			children = (
 				470F4757268889A71A03FB3A /* Pods-Bram.debug.xcconfig */,
 				683EB147F4A12E5563D0BF59 /* Pods-Bram.release.xcconfig */,
+				65F4189FD482EAEA16D06560 /* Pods-BramTests.debug.xcconfig */,
+				2B4B8BC54D33BA53A67C5319 /* Pods-BramTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -132,6 +135,7 @@
 				A6D6744E1E151D080020EB50 /* Storage.swift */,
 				A6D674501E151D970020EB50 /* StubStorage.swift */,
 				A6E55EC01E1D3FD40057EF3E /* FileStorage.swift */,
+				A60C2C721E20327600FE36D8 /* CardBuilder.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -166,13 +170,6 @@
 			name = other;
 			sourceTree = "<group>";
 		};
-		A6BFF3C81DAE75B600E47610 /* ui */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = ui;
-			sourceTree = "<group>";
-		};
 		A6D2961A1D7331A100BF3F54 = {
 			isa = PBXGroup;
 			children = (
@@ -198,7 +195,6 @@
 		A6D296251D7331A200BF3F54 /* Bram */ = {
 			isa = PBXGroup;
 			children = (
-				A6BFF3C81DAE75B600E47610 /* ui */,
 				A6BFF3C71DAE75AF00E47610 /* other */,
 				A6BFF3C61DAE75A700E47610 /* utils */,
 				A6BFF3C51DAE759B00E47610 /* logic */,
@@ -235,6 +231,7 @@
 			children = (
 				D95A411BBDAB8978911C54BD /* Pods.framework */,
 				704C997C580BF027F2A5306C /* Pods_Bram.framework */,
+				DDDDEE1AE2D8A9D847ED1564 /* Pods_BramTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -266,9 +263,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A6D296511D7331A200BF3F54 /* Build configuration list for PBXNativeTarget "BramTests" */;
 			buildPhases = (
+				3F4366E4218CBDC75461A4D3 /* [CP] Check Pods Manifest.lock */,
 				A6D296361D7331A200BF3F54 /* Sources */,
 				A6D296371D7331A200BF3F54 /* Frameworks */,
 				A6D296381D7331A200BF3F54 /* Resources */,
+				B125424260670E2957D255D8 /* [CP] Embed Pods Frameworks */,
+				767D27FE7C05F2A1EEA504DD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -372,6 +372,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		3F4366E4218CBDC75461A4D3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 		58B3014AEBEB11A7AF4A520D /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -387,6 +402,21 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bram/Pods-Bram-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		767D27FE7C05F2A1EEA504DD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BramTests/Pods-BramTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		7B87BE79216667E348826049 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -400,6 +430,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bram/Pods-Bram-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B125424260670E2957D255D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BramTests/Pods-BramTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C41138A7BEC1320E32381140 /* [CP] Check Pods Manifest.lock */ = {
@@ -438,6 +483,7 @@
 				A6E55EC11E1D3FD40057EF3E /* FileStorage.swift in Sources */,
 				A6D296271D7331A200BF3F54 /* AppDelegate.swift in Sources */,
 				A6732A361D93B978002AAB60 /* Card.swift in Sources */,
+				A60C2C731E20327600FE36D8 /* CardBuilder.swift in Sources */,
 				A6D674531E1525400020EB50 /* SwiftPriorityQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,14 +492,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6F7FC491DAA9C3C00D689BE /* Deck.swift in Sources */,
 				A6D2963F1D7331A200BF3F54 /* BramTests.swift in Sources */,
-				A6F7FC471DAA9B9C00D689BE /* DateExtension.swift in Sources */,
 				A67233C81E1D435C00E774DA /* BramStorageTests.swift in Sources */,
-				A6BFF3C91DAE7AE000E47610 /* Scheduler.swift in Sources */,
-				A67373AE1DBB3470009E31F0 /* CardDue.swift in Sources */,
-				A6F7FC4A1DAA9C3F00D689BE /* Card.swift in Sources */,
-				A6BFF3CC1DAE7B2600E47610 /* TimeAdded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -618,7 +658,7 @@
 		};
 		A6D296521D7331A200BF3F54 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 683EB147F4A12E5563D0BF59 /* Pods-Bram.release.xcconfig */;
+			baseConfigurationReference = 65F4189FD482EAEA16D06560 /* Pods-BramTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = BramTests/Info.plist;
@@ -632,7 +672,7 @@
 		};
 		A6D296531D7331A200BF3F54 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 683EB147F4A12E5563D0BF59 /* Pods-Bram.release.xcconfig */;
+			baseConfigurationReference = 2B4B8BC54D33BA53A67C5319 /* Pods-BramTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = BramTests/Info.plist;
