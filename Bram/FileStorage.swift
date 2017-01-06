@@ -28,6 +28,17 @@ class FileStorage : Storage {
         return decks
     }
     
+    func getCards() -> [Card] {
+        let results = realm.objects(Card.self)
+        var cards: [Card] = []
+        
+        for card in results {
+            cards.append(card)
+        }
+        
+        return cards
+    }
+    
     func getCards(forDeck deckId: String) -> [Card] {
         let results = realm.objects(Card.self).filter("deckId == \(deckId)")
         var cards: [Card] = []
@@ -66,6 +77,12 @@ class FileStorage : Storage {
     func delete(card: Card) {
         try! realm.write {
             realm.delete(card)
+        }
+    }
+    
+    func deleteAll() {
+        try! realm.write {
+            realm.deleteAll()
         }
     }
     
