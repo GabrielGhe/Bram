@@ -10,6 +10,7 @@
 		06A178DCD607607DD1275F7E /* Pods_BramTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDDDEE1AE2D8A9D847ED1564 /* Pods_BramTests.framework */; };
 		4EE7170E60C52C4E8AAC47EF /* Pods_Bram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704C997C580BF027F2A5306C /* Pods_Bram.framework */; };
 		A60C2C731E20327600FE36D8 /* CardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60C2C721E20327600FE36D8 /* CardBuilder.swift */; };
+		A639AAF51E3BA02D001D29E0 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A639AAF41E3BA02D001D29E0 /* FirstPageViewController.swift */; };
 		A67233C61E1D432B00E774DA /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67233C51E1D432B00E774DA /* DeckViewController.swift */; };
 		A67233C81E1D435C00E774DA /* BramStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67233C71E1D435C00E774DA /* BramStorageTests.swift */; };
 		A6732A361D93B978002AAB60 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A351D93B978002AAB60 /* Card.swift */; };
@@ -57,6 +58,7 @@
 		683EB147F4A12E5563D0BF59 /* Pods-Bram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bram/Pods-Bram.release.xcconfig"; sourceTree = "<group>"; };
 		704C997C580BF027F2A5306C /* Pods_Bram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A60C2C721E20327600FE36D8 /* CardBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBuilder.swift; sourceTree = "<group>"; };
+		A639AAF41E3BA02D001D29E0 /* FirstPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
 		A67233C51E1D432B00E774DA /* DeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = "<group>"; };
 		A67233C71E1D435C00E774DA /* BramStorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BramStorageTests.swift; sourceTree = "<group>"; };
 		A6732A351D93B978002AAB60 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				A6D296321D7331A200BF3F54 /* LaunchScreen.storyboard */,
 				A686BB211DFBDF3C002F1F0E /* DeckTableViewCell.swift */,
 				A67233C51E1D432B00E774DA /* DeckViewController.swift */,
+				A639AAF41E3BA02D001D29E0 /* FirstPageViewController.swift */,
 			);
 			path = Bram;
 			sourceTree = "<group>";
@@ -484,6 +487,7 @@
 				A6D296271D7331A200BF3F54 /* AppDelegate.swift in Sources */,
 				A6732A361D93B978002AAB60 /* Card.swift in Sources */,
 				A60C2C731E20327600FE36D8 /* CardBuilder.swift in Sources */,
+				A639AAF51E3BA02D001D29E0 /* FirstPageViewController.swift in Sources */,
 				A6D674531E1525400020EB50 /* SwiftPriorityQueue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
