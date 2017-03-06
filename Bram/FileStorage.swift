@@ -20,6 +20,7 @@ class FileStorage : Storage {
         var decks: [Deck] = []
         
         for deck in results {
+            //TODO make deep copy of deck
             let cards = getCards(forDeck: deck.deckId)
             deck.add(cards: cards)
             decks.append(deck)
@@ -33,18 +34,44 @@ class FileStorage : Storage {
         var cards: [Card] = []
         
         for card in results {
-            cards.append(card)
+            let cardDeepCopy = CardBuilder().set(otherCard: card).build()
+            cards.append(cardDeepCopy)
         }
         
         return cards
     }
     
-    func getCards(forDeck deckId: String) -> [Card] {
-        let results = realm.objects(Card.self).filter("deckId = %@", deckId)
+    func getCards(forUserId userId: String) -> [Card] {
+        let results = realm.objects(Card.self).filter("deckId = %@", userId)
         var cards: [Card] = []
         
         for card in results {
-            cards.append(card)
+            let cardDeepCopy = CardBuilder().set(otherCard: card).build()
+            cards.append(cardDeepCopy)
+        }
+        
+        return cards
+    }
+    
+    func getDecks(forUserId userId: String) -> [Deck] {
+        let results = realm.objects(Deck.self).filter("userId = %@", userId)
+        var decks: [Deck] = []
+        
+        //TODO make deep copy of deck
+        for deck in results {
+            decks.append(deck)
+        }
+        
+        return decks
+    }
+    
+    func getCards(forDeck deckId: String) -> [Card] {
+        let results = realm.objects(Card.self).filter("userId = %@", deckId)
+        var cards: [Card] = []
+        
+        for card in results {
+            let cardDeepCopy = CardBuilder().set(otherCard: card).build()
+            cards.append(cardDeepCopy)
         }
         
         return cards
@@ -52,8 +79,13 @@ class FileStorage : Storage {
     
     func getCard(byId id: String) -> Card? {
         let predicate = NSPredicate(format: "cardId = %@", id)
-        let card = realm.objects(Card.self).filter(predicate).first
-        return card
+        let maybeCard = realm.objects(Card.self).filter(predicate).first
+        
+        guard let card = maybeCard else {
+            return Optional<Card>.none
+        }
+        
+        return CardBuilder().set(otherCard: card).build()
     }
     
     func save(deck: Deck) {
@@ -66,6 +98,7 @@ class FileStorage : Storage {
         try! realm.write {
             realm.add(card)
         }
+        let cards = getCards()
     }
     
     func delete(deck: Deck) {
@@ -78,6 +111,14 @@ class FileStorage : Storage {
         try! realm.write {
             realm.delete(card)
         }
+    }
+    
+    func deleteDecks(forUserId: String) {
+        
+    }
+    
+    func deleteCards(forUserId: String) {
+        
     }
     
     func deleteAll() {

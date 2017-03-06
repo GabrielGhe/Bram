@@ -10,9 +10,10 @@ import UIKit
 import RealmSwift
 
 class Deck : Object {
+    dynamic var userId: String = ""
     private var cardMap: [String:Card] = [:]
     dynamic var name: String = ""
-    dynamic var deckId: String = UUID().uuidString
+    dynamic var deckId: String = ""
     dynamic var cardsPerDay: Int = 10
     dynamic var creationDate: Date = Date.s
     
@@ -25,16 +26,17 @@ class Deck : Object {
     }
     
     convenience init(name: String) {
-        self.init(deckId: UUID().uuidString, name: name, cards: [], cardsPerDay: 10, creationDate: Date.s)
+        self.init(userId: UIDevice.current.identifierForVendor!.uuidString, deckId: UUID().uuidString, name: name, cards: [], cardsPerDay: 10, creationDate: Date.s)
     }
     
-    convenience init(deckId: String, name: String, cards: [Card], cardsPerDay: Int, creationDate: Date) {
+    convenience init(userId: String, deckId: String, name: String, cards: [Card], cardsPerDay: Int, creationDate: Date) {
         self.init()
         self.deckId = deckId
         self.name = name
         self.cardsPerDay = cardsPerDay
         self.cardMap = [:]
         self.creationDate = creationDate
+        self.userId = userId
         add(cards: cards)
     }
     

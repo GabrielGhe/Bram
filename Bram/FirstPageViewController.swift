@@ -222,9 +222,9 @@ class FirstPageViewController: UIViewController, UITextViewDelegate {
         }
         
         let card = CardBuilder()
-                        .setQuestion(question)
-                        .setAnswer(answer)
-                        .build()
+            .set(question: question)
+            .set(answer: answer)
+            .build()
         
         BramStorage.sharedInstance.save(card: card)
         

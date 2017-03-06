@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 
 open class CardDue : Object {
+    dynamic var userId: String = UIDevice.current.identifierForVendor!.uuidString
     dynamic var cardId: String = UUID().uuidString
     dynamic var deckId: String = UUID().uuidString
     dynamic var dateToShow: Date = Date.s
@@ -20,14 +21,20 @@ open class CardDue : Object {
     }
     
     convenience init(card: Card, isReminder: Bool) {
-        self.init(cardId: card.cardId,
+        self.init(userId: card.userId,
+                  cardId: card.cardId,
                   deckId: card.deckId,
                   dateToShow: card.dateToShow,
                   isReminder: isReminder)
     }
     
-    convenience init(cardId: String, deckId: String, dateToShow: Date, isReminder: Bool = false) {
+    convenience init(userId: String = UIDevice.current.identifierForVendor!.uuidString,
+                     cardId: String,
+                     deckId: String,
+                     dateToShow: Date,
+                     isReminder: Bool = false) {
         self.init()
+        self.userId = userId
         self.cardId = cardId
         self.deckId = deckId
         self.dateToShow = dateToShow

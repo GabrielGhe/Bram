@@ -19,9 +19,9 @@ class Scheduler {
         let daysToWait = Int(temp + 0.5) + 1
         
         return CardBuilder()
-            .setCard(card)
-            .setDaysToWait(daysToWait)
-            .setDateToShow(date.addDays(daysToWait))
+            .set(otherCard: card)
+            .set(daysToWait: daysToWait)
+            .set(dateToShow: date.addDays(daysToWait))
             .build()
     }
 }

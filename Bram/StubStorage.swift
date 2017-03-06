@@ -11,6 +11,7 @@ import UIKit
 class StubStorage : Storage {
     
     fileprivate var internalDecks:[Deck] = []
+    fileprivate var TEST_USER_ID = "TestId"
     
     // MARK: Storage
     
@@ -30,6 +31,28 @@ class StubStorage : Storage {
         return internalDecks
     }
     
+    func getDecks(forUserId userId: String) -> [Deck] {
+        var decks: [Deck] = []
+        
+        for tempDeck in getDecks() {
+            if (tempDeck.userId == userId) {
+                decks.append(tempDeck)
+            }
+        }
+        return decks
+    }
+    
+    func getCards(forUserId userId: String) -> [Card] {
+        var cards: [Card] = []
+        
+        for tempDeck in getDecks() {
+            if (tempDeck.userId == userId) {
+                cards.append(contentsOf: tempDeck.cards)
+            }
+        }
+        return cards
+    }
+    
     func getCards(forDeck deckId: String) -> [Card] {
         var cards: [Card] = []
         
@@ -40,6 +63,14 @@ class StubStorage : Storage {
             }
         }
         return cards
+    }
+    
+    func deleteDecks(forUserId: String) {
+        
+    }
+    
+    func deleteCards(forUserId: String) {
+        
     }
     
     func save(deck: Deck) {
@@ -54,26 +85,29 @@ class StubStorage : Storage {
     
     fileprivate func populateChineseDeck(deck: Deck) {
         let card1 = CardBuilder()
-            .setCardId("1")
-            .setDeckId(deck.deckId)
-            .setQuestion("ni xian wo le")
-            .setAnswer("Did you miss me")
-            .setDateToShow(Date.e.addDays(4))
+            .set(cardId:"1")
+            .set(userId: TEST_USER_ID)
+            .set(deckId:deck.deckId)
+            .set(question:"ni xian wo le")
+            .set(answer:"Did you miss me")
+            .set(dateToShow:Date.e.addDays(4))
             .build()
         
         let card2 = CardBuilder()
-            .setCardId("2")
-            .setDeckId(deck.deckId)
-            .setQuestion("wo ai ni")
-            .setAnswer("I love you")
-            .setDateToShow(Date.e.addDays(3))
+            .set(cardId:"2")
+            .set(userId: TEST_USER_ID)
+            .set(deckId:deck.deckId)
+            .set(question:"wo ai ni")
+            .set(answer:"I love you")
+            .set(dateToShow:Date.e.addDays(3))
             .build()
         
         let card3 = CardBuilder()
-            .setCardId("3")
-            .setDeckId(deck.deckId)
-            .setQuestion("ni xiang qu nali")
-            .setAnswer("where do you want to go")
+            .set(cardId:"3")
+            .set(userId: TEST_USER_ID)
+            .set(deckId:deck.deckId)
+            .set(question:"ni xiang qu nali")
+            .set(answer:"where do you want to go")
             .build()
         
         deck.add(card: card1)
@@ -83,33 +117,37 @@ class StubStorage : Storage {
     
     fileprivate func populateLifeDeck(deck: Deck) {
         let card1 = CardBuilder()
-            .setCardId("4")
-            .setDeckId(deck.deckId)
-            .setQuestion("Word for 4")
-            .setAnswer("Arrow")
-            .setDateToShow(Date.e.addDays(2))
+            .set(cardId:"4")
+            .set(userId: TEST_USER_ID)
+            .set(deckId:deck.deckId)
+            .set(question:"Word for 4")
+            .set(answer:"Arrow")
+            .set(dateToShow:Date.e.addDays(2))
             .build()
         
         let card2 = CardBuilder()
-            .setCardId("5")
-            .setDeckId(deck.deckId)
-            .setQuestion("Word for 7")
-            .setAnswer("Cow")
-            .setDateToShow(Date.e.addDays(6))
+            .set(cardId:"5")
+            .set(userId: TEST_USER_ID)
+            .set(deckId:deck.deckId)
+            .set(question:"Word for 7")
+            .set(answer:"Cow")
+            .set(dateToShow:Date.e.addDays(6))
             .build()
         
         let card3 = CardBuilder()
-            .setCardId("6")
-            .setDeckId(deck.deckId)
-            .setQuestion("Word for 9")
-            .setAnswer("Bee")
+            .set(cardId:"6")
+            .set(userId: TEST_USER_ID)
+            .set(deckId:deck.deckId)
+            .set(question:"Word for 9")
+            .set(answer:"Bee")
             .build()
         
         let card4 = CardBuilder()
-            .setCardId("7")
-            .setDeckId(deck.deckId)
-            .setQuestion("Word for 0")
-            .setAnswer("Saw")
+            .set(cardId:"7")
+            .set(userId: TEST_USER_ID)
+            .set(deckId:deck.deckId)
+            .set(question:"Word for 0")
+            .set(answer:"Saw")
             .build()
         
         deck.add(card: card1)
@@ -120,18 +158,20 @@ class StubStorage : Storage {
     
     fileprivate func populateSchoolDeck(deck: Deck) {
         let card1 = CardBuilder()
-            .setCardId("8")
-            .setDeckId(deck.deckId)
-            .setQuestion("What is top down programming?")
-            .setAnswer("Define the methods first before continuing")
-            .setDateToShow(Date.e.addDays(5))
+            .set(cardId:"8")
+            .set(userId: TEST_USER_ID)
+            .set(deckId:deck.deckId)
+            .set(question:"What is top down programming?")
+            .set(answer:"Define the methods first before continuing")
+            .set(dateToShow:Date.e.addDays(5))
             .build()
         
         let card2 = CardBuilder()
-            .setCardId("9")
-            .setDeckId(deck.deckId)
-            .setQuestion("What is SLAP?")
-            .setAnswer("Single layer of abstraction per level")
+            .set(cardId:"9")
+            .set(userId: TEST_USER_ID)
+            .set(deckId:deck.deckId)
+            .set(question:"What is SLAP?")
+            .set(answer:"Single layer of abstraction per level")
             .build()
         
         deck.add(card: card1)

@@ -22,10 +22,20 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: - TableView
     
     func getCards() {
+        let tempCard = CardBuilder()
+            .set(cardId: "1 - test")
+            .set(question: "1 - thing")
+            .set(answer: "1 - blah")
+            .build()
         let fetchedCards = BramStorage.sharedInstance.getCards()
-        let tempCard = CardBuilder().setQuestion("thing").setAnswer("blah").build()
-        cards.append(contentsOf: fetchedCards)
-        cards.append(tempCard)
+        for copyCard in fetchedCards {
+            print(copyCard.userId)
+            print(copyCard.cardId)
+            print(copyCard.question)
+            print(copyCard.answer)
+        }
+        self.cards.append(tempCard)
+        self.cards.append(contentsOf: fetchedCards)
     }
     
     func createTableView() {
@@ -34,8 +44,6 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
         tableView.delegate = self
         cardsTableView = tableView
-        tableView.estimatedRowHeight = 200
-        tableView.rowHeight = UITableViewAutomaticDimension
         self.view.addSubview(cardsTableView!)
         cardsTableView?.snp.makeConstraints { (make) -> Void in
             make.size.equalTo(self.view)
@@ -49,7 +57,7 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cards.count
+        return self.cards.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
