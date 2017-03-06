@@ -11,13 +11,14 @@
 		4EE7170E60C52C4E8AAC47EF /* Pods_Bram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704C997C580BF027F2A5306C /* Pods_Bram.framework */; };
 		A60C2C731E20327600FE36D8 /* CardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60C2C721E20327600FE36D8 /* CardBuilder.swift */; };
 		A639AAF51E3BA02D001D29E0 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A639AAF41E3BA02D001D29E0 /* FirstPageViewController.swift */; };
-		A67233C61E1D432B00E774DA /* DeckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67233C51E1D432B00E774DA /* DeckViewController.swift */; };
 		A67233C81E1D435C00E774DA /* BramStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67233C71E1D435C00E774DA /* BramStorageTests.swift */; };
 		A6732A361D93B978002AAB60 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A351D93B978002AAB60 /* Card.swift */; };
 		A6732A381D93C4DA002AAB60 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A371D93C4DA002AAB60 /* DateExtension.swift */; };
-		A686BB221DFBDF3C002F1F0E /* DeckTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A686BB211DFBDF3C002F1F0E /* DeckTableViewCell.swift */; };
 		A68AF3BF1DF402970056673C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68AF3BE1DF402970056673C /* StringExtension.swift */; };
 		A68CFF421DBB27CC00759817 /* CardDue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68CFF411DBB27CC00759817 /* CardDue.swift */; };
+		A6974CFD1E6D0D010097D1FE /* BramStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6974CFC1E6D0D010097D1FE /* BramStorage.swift */; };
+		A6974CFF1E6D13E60097D1FE /* BrowseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6974CFE1E6D13E60097D1FE /* BrowseViewController.swift */; };
+		A6974D011E6D16C70097D1FE /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6974D001E6D16C70097D1FE /* CardTableViewCell.swift */; };
 		A6BFF3C31DAE758300E47610 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFF3C21DAE758300E47610 /* Scheduler.swift */; };
 		A6BFF3CB1DAE7B0400E47610 /* TimeAdded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BFF3CA1DAE7B0400E47610 /* TimeAdded.swift */; };
 		A6D296271D7331A200BF3F54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6D296261D7331A200BF3F54 /* AppDelegate.swift */; };
@@ -59,13 +60,14 @@
 		704C997C580BF027F2A5306C /* Pods_Bram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A60C2C721E20327600FE36D8 /* CardBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBuilder.swift; sourceTree = "<group>"; };
 		A639AAF41E3BA02D001D29E0 /* FirstPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
-		A67233C51E1D432B00E774DA /* DeckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckViewController.swift; sourceTree = "<group>"; };
 		A67233C71E1D435C00E774DA /* BramStorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BramStorageTests.swift; sourceTree = "<group>"; };
 		A6732A351D93B978002AAB60 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A6732A371D93C4DA002AAB60 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
-		A686BB211DFBDF3C002F1F0E /* DeckTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeckTableViewCell.swift; sourceTree = "<group>"; };
 		A68AF3BE1DF402970056673C /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		A68CFF411DBB27CC00759817 /* CardDue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardDue.swift; sourceTree = "<group>"; };
+		A6974CFC1E6D0D010097D1FE /* BramStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BramStorage.swift; sourceTree = "<group>"; };
+		A6974CFE1E6D13E60097D1FE /* BrowseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseViewController.swift; sourceTree = "<group>"; };
+		A6974D001E6D16C70097D1FE /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		A6BFF3C21DAE758300E47610 /* Scheduler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scheduler.swift; sourceTree = "<group>"; };
 		A6BFF3CA1DAE7B0400E47610 /* TimeAdded.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeAdded.swift; sourceTree = "<group>"; };
 		A6D296231D7331A200BF3F54 /* Bram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +140,7 @@
 				A6D674501E151D970020EB50 /* StubStorage.swift */,
 				A6E55EC01E1D3FD40057EF3E /* FileStorage.swift */,
 				A60C2C721E20327600FE36D8 /* CardBuilder.swift */,
+				A6974CFC1E6D0D010097D1FE /* BramStorage.swift */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -202,10 +205,10 @@
 				A6BFF3C51DAE759B00E47610 /* logic */,
 				A6BFF3C41DAE758C00E47610 /* models */,
 				A6D2962A1D7331A200BF3F54 /* Main.storyboard */,
+				A6974D001E6D16C70097D1FE /* CardTableViewCell.swift */,
 				A6D296321D7331A200BF3F54 /* LaunchScreen.storyboard */,
-				A686BB211DFBDF3C002F1F0E /* DeckTableViewCell.swift */,
-				A67233C51E1D432B00E774DA /* DeckViewController.swift */,
 				A639AAF41E3BA02D001D29E0 /* FirstPageViewController.swift */,
+				A6974CFE1E6D13E60097D1FE /* BrowseViewController.swift */,
 			);
 			path = Bram;
 			sourceTree = "<group>";
@@ -472,15 +475,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A686BB221DFBDF3C002F1F0E /* DeckTableViewCell.swift in Sources */,
 				A6DB0F9B1D991F6400988B1B /* Deck.swift in Sources */,
 				A6BFF3C31DAE758300E47610 /* Scheduler.swift in Sources */,
+				A6974CFF1E6D13E60097D1FE /* BrowseViewController.swift in Sources */,
 				A68AF3BF1DF402970056673C /* StringExtension.swift in Sources */,
 				A6D6744F1E151D080020EB50 /* Storage.swift in Sources */,
 				A6BFF3CB1DAE7B0400E47610 /* TimeAdded.swift in Sources */,
 				A6D674511E151D970020EB50 /* StubStorage.swift in Sources */,
+				A6974D011E6D16C70097D1FE /* CardTableViewCell.swift in Sources */,
 				A6732A381D93C4DA002AAB60 /* DateExtension.swift in Sources */,
-				A67233C61E1D432B00E774DA /* DeckViewController.swift in Sources */,
+				A6974CFD1E6D0D010097D1FE /* BramStorage.swift in Sources */,
 				A68CFF421DBB27CC00759817 /* CardDue.swift in Sources */,
 				A6D2962F1D7331A200BF3F54 /* Bram.xcdatamodeld in Sources */,
 				A6E55EC11E1D3FD40057EF3E /* FileStorage.swift in Sources */,

@@ -40,7 +40,7 @@ class FileStorage : Storage {
     }
     
     func getCards(forDeck deckId: String) -> [Card] {
-        let results = realm.objects(Card.self).filter("deckId == \(deckId)")
+        let results = realm.objects(Card.self).filter("deckId = %@", deckId)
         var cards: [Card] = []
         
         for card in results {
