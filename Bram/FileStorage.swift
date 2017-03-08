@@ -34,8 +34,7 @@ class FileStorage : Storage {
         var cards: [Card] = []
         
         for card in results {
-            let cardDeepCopy = CardBuilder().set(otherCard: card).build()
-            cards.append(cardDeepCopy)
+            cards.append(card)
         }
         
         return cards
@@ -46,8 +45,7 @@ class FileStorage : Storage {
         var cards: [Card] = []
         
         for card in results {
-            let cardDeepCopy = CardBuilder().set(otherCard: card).build()
-            cards.append(cardDeepCopy)
+            cards.append(card)
         }
         
         return cards
@@ -70,8 +68,7 @@ class FileStorage : Storage {
         var cards: [Card] = []
         
         for card in results {
-            let cardDeepCopy = CardBuilder().set(otherCard: card).build()
-            cards.append(cardDeepCopy)
+            cards.append(card)
         }
         
         return cards
@@ -85,7 +82,7 @@ class FileStorage : Storage {
             return Optional<Card>.none
         }
         
-        return CardBuilder().set(otherCard: card).build()
+        return card
     }
     
     func save(deck: Deck) {
@@ -98,7 +95,6 @@ class FileStorage : Storage {
         try! realm.write {
             realm.add(card)
         }
-        let cards = getCards()
     }
     
     func delete(deck: Deck) {

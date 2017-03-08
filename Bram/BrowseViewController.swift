@@ -22,11 +22,6 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     // MARK: - TableView
     
     func getCards() {
-        let tempCard = CardBuilder()
-            .set(cardId: "1 - test")
-            .set(question: "1 - thing")
-            .set(answer: "1 - blah")
-            .build()
         let fetchedCards = BramStorage.sharedInstance.getCards()
         for copyCard in fetchedCards {
             print(copyCard.userId)
@@ -34,7 +29,6 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
             print(copyCard.question)
             print(copyCard.answer)
         }
-        self.cards.append(tempCard)
         self.cards.append(contentsOf: fetchedCards)
     }
     
@@ -62,8 +56,6 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! CardTableViewCell
-        
-        cell.tableView = tableView
         cell.card = cards[indexPath.row]
         return cell
     }
@@ -72,6 +64,17 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return 1
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            let cardToDelete = cards.remove(at: indexPath.row)
+            BramStorage.sharedInstance.delete(card: cardToDelete)
+            self.cardsTableView?.reloadData()
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -82,5 +85,4 @@ class BrowseViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Pass the selected object to the new view controller.
     }
     */
-
 }

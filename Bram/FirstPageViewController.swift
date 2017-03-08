@@ -180,10 +180,7 @@ class FirstPageViewController: UIViewController, UITextViewDelegate {
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        if textView.text.isEmpty {
-            textView.text = PLACEHOLDER
-            textView.textColor = UIColor.lightGray
-        }
+        setPlaceholder(textView: textView)
     }
     
     // MARK: - AddButton
@@ -232,6 +229,17 @@ class FirstPageViewController: UIViewController, UITextViewDelegate {
         backCard.text = ""
         frontCard.resignFirstResponder()
         backCard.resignFirstResponder()
+        setPlaceholder(textView: frontCard)
+        setPlaceholder(textView: backCard)
+        
+        scrollView?.scrollToTop()
+    }
+    
+    func setPlaceholder(textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = PLACEHOLDER
+            textView.textColor = UIColor.lightGray
+        }
     }
 
     /*

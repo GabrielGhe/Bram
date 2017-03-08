@@ -11,6 +11,7 @@
 		4EE7170E60C52C4E8AAC47EF /* Pods_Bram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 704C997C580BF027F2A5306C /* Pods_Bram.framework */; };
 		A60C2C731E20327600FE36D8 /* CardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60C2C721E20327600FE36D8 /* CardBuilder.swift */; };
 		A639AAF51E3BA02D001D29E0 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A639AAF41E3BA02D001D29E0 /* FirstPageViewController.swift */; };
+		A64ED7781E6FD7C100B9203C /* ScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64ED7771E6FD7C000B9203C /* ScrollViewExtension.swift */; };
 		A67233C81E1D435C00E774DA /* BramStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67233C71E1D435C00E774DA /* BramStorageTests.swift */; };
 		A6732A361D93B978002AAB60 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A351D93B978002AAB60 /* Card.swift */; };
 		A6732A381D93C4DA002AAB60 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A371D93C4DA002AAB60 /* DateExtension.swift */; };
@@ -60,6 +61,7 @@
 		704C997C580BF027F2A5306C /* Pods_Bram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A60C2C721E20327600FE36D8 /* CardBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBuilder.swift; sourceTree = "<group>"; };
 		A639AAF41E3BA02D001D29E0 /* FirstPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
+		A64ED7771E6FD7C000B9203C /* ScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewExtension.swift; sourceTree = "<group>"; };
 		A67233C71E1D435C00E774DA /* BramStorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BramStorageTests.swift; sourceTree = "<group>"; };
 		A6732A351D93B978002AAB60 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A6732A371D93C4DA002AAB60 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -128,6 +130,14 @@
 				2B4B8BC54D33BA53A67C5319 /* Pods-BramTests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A64ED7761E6FD7A100B9203C /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A64ED7771E6FD7C000B9203C /* ScrollViewExtension.swift */,
+			);
+			name = extensions;
 			sourceTree = "<group>";
 		};
 		A6BFF3C41DAE758C00E47610 /* models */ = {
@@ -200,6 +210,7 @@
 		A6D296251D7331A200BF3F54 /* Bram */ = {
 			isa = PBXGroup;
 			children = (
+				A64ED7761E6FD7A100B9203C /* extensions */,
 				A6BFF3C71DAE75AF00E47610 /* other */,
 				A6BFF3C61DAE75A700E47610 /* utils */,
 				A6BFF3C51DAE759B00E47610 /* logic */,
@@ -485,6 +496,7 @@
 				A6974D011E6D16C70097D1FE /* CardTableViewCell.swift in Sources */,
 				A6732A381D93C4DA002AAB60 /* DateExtension.swift in Sources */,
 				A6974CFD1E6D0D010097D1FE /* BramStorage.swift in Sources */,
+				A64ED7781E6FD7C100B9203C /* ScrollViewExtension.swift in Sources */,
 				A68CFF421DBB27CC00759817 /* CardDue.swift in Sources */,
 				A6D2962F1D7331A200BF3F54 /* Bram.xcdatamodeld in Sources */,
 				A6E55EC11E1D3FD40057EF3E /* FileStorage.swift in Sources */,
