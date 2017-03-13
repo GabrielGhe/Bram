@@ -64,7 +64,8 @@ class FirstPageViewController: UIViewController, UITextViewDelegate {
     }
     
     func showQuiz() {
-        
+        let quizViewController = QuizViewController()
+        self.navigationController?.pushViewController(quizViewController, animated: true)
     }
     
     func addScrollView() {

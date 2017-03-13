@@ -12,7 +12,9 @@
 		A60C2C731E20327600FE36D8 /* CardBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60C2C721E20327600FE36D8 /* CardBuilder.swift */; };
 		A639AAF51E3BA02D001D29E0 /* FirstPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A639AAF41E3BA02D001D29E0 /* FirstPageViewController.swift */; };
 		A64ED7781E6FD7C100B9203C /* ScrollViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64ED7771E6FD7C000B9203C /* ScrollViewExtension.swift */; };
+		A64ED77C1E7287F700B9203C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A64ED77B1E7287F700B9203C /* QuizViewController.swift */; };
 		A67233C81E1D435C00E774DA /* BramStorageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67233C71E1D435C00E774DA /* BramStorageTests.swift */; };
+		A6728FC51E7667FD006F982D /* QuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6728FC41E7667FD006F982D /* QuizTableViewCell.swift */; };
 		A6732A361D93B978002AAB60 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A351D93B978002AAB60 /* Card.swift */; };
 		A6732A381D93C4DA002AAB60 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6732A371D93C4DA002AAB60 /* DateExtension.swift */; };
 		A68AF3BF1DF402970056673C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68AF3BE1DF402970056673C /* StringExtension.swift */; };
@@ -62,7 +64,9 @@
 		A60C2C721E20327600FE36D8 /* CardBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardBuilder.swift; sourceTree = "<group>"; };
 		A639AAF41E3BA02D001D29E0 /* FirstPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPageViewController.swift; sourceTree = "<group>"; };
 		A64ED7771E6FD7C000B9203C /* ScrollViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrollViewExtension.swift; sourceTree = "<group>"; };
+		A64ED77B1E7287F700B9203C /* QuizViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		A67233C71E1D435C00E774DA /* BramStorageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BramStorageTests.swift; sourceTree = "<group>"; };
+		A6728FC41E7667FD006F982D /* QuizTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizTableViewCell.swift; sourceTree = "<group>"; };
 		A6732A351D93B978002AAB60 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		A6732A371D93C4DA002AAB60 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		A68AF3BE1DF402970056673C /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
@@ -220,6 +224,8 @@
 				A6D296321D7331A200BF3F54 /* LaunchScreen.storyboard */,
 				A639AAF41E3BA02D001D29E0 /* FirstPageViewController.swift */,
 				A6974CFE1E6D13E60097D1FE /* BrowseViewController.swift */,
+				A64ED77B1E7287F700B9203C /* QuizViewController.swift */,
+				A6728FC41E7667FD006F982D /* QuizTableViewCell.swift */,
 			);
 			path = Bram;
 			sourceTree = "<group>";
@@ -497,8 +503,10 @@
 				A6732A381D93C4DA002AAB60 /* DateExtension.swift in Sources */,
 				A6974CFD1E6D0D010097D1FE /* BramStorage.swift in Sources */,
 				A64ED7781E6FD7C100B9203C /* ScrollViewExtension.swift in Sources */,
+				A64ED77C1E7287F700B9203C /* QuizViewController.swift in Sources */,
 				A68CFF421DBB27CC00759817 /* CardDue.swift in Sources */,
 				A6D2962F1D7331A200BF3F54 /* Bram.xcdatamodeld in Sources */,
+				A6728FC51E7667FD006F982D /* QuizTableViewCell.swift in Sources */,
 				A6E55EC11E1D3FD40057EF3E /* FileStorage.swift in Sources */,
 				A6D296271D7331A200BF3F54 /* AppDelegate.swift in Sources */,
 				A6732A361D93B978002AAB60 /* Card.swift in Sources */,
