@@ -37,34 +37,6 @@ class QuizTableViewCell: UITableViewCell {
         initializeCard(card: card!)
     }
     
-    func styleQuestion(card: Card) {
-        questionCard.snp.makeConstraints { (make) -> Void in
-            make.center.equalTo(self.contentView.snp.center)
-            make.size.equalTo(self.contentView.snp.size)
-        }
-        questionCard.backgroundColor = .blue
-        
-        questionLabel.text = card.question
-        questionLabel.snp.makeConstraints { (make) -> Void in
-            make.center.equalTo(self.contentView.snp.center)
-            make.size.equalTo(self.contentView.snp.size)
-        }
-    }
-    
-    func styleAnswer(card: Card) {
-        answerCard.snp.makeConstraints { (make) -> Void in
-            make.center.equalTo(self.contentView.snp.center)
-            make.size.equalTo(self.contentView.snp.size)
-        }
-        questionCard.backgroundColor = .red
-        
-        answerLabel.text = card.answer
-        answerLabel.snp.makeConstraints { (make) -> Void in
-            make.center.equalTo(self.contentView.snp.center)
-            make.size.equalTo(self.contentView.snp.size)
-        }
-    }
-    
     func initializeCard(card: Card) {
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(QuizTableViewCell.tapped))
         singleTap.numberOfTapsRequired = 1
@@ -72,8 +44,27 @@ class QuizTableViewCell: UITableViewCell {
         self.contentView.addGestureRecognizer(singleTap)
         self.contentView.addSubview(questionCard)
         
-        styleQuestion(card: card)
-        styleAnswer(card: card)
+        let height = self.contentView.frame.height
+        let width = self.contentView.frame.width
+        
+        styleQuestion(card: card, height: height, width: width)
+        styleAnswer(card: card, height: height, width: width)
+    }
+    
+    func styleQuestion(card: Card, height: CGFloat, width: CGFloat) {
+        questionCard.frame = CGRect(x: 0, y: 0, width: width, height: height)
+        questionLabel.backgroundColor = .lightGray
+        
+        questionLabel.text = card.question
+        questionLabel.frame = CGRect(x: 0, y: 0, width: width, height: height)
+    }
+    
+    func styleAnswer(card: Card, height: CGFloat, width: CGFloat) {
+        answerCard.frame = CGRect(x: 0, y: 0, width: width, height: height)
+        answerLabel.backgroundColor = .lightGray
+        
+        answerLabel.text = card.answer
+        answerLabel.frame = CGRect(x: 0, y: 0, width: width, height: height)
     }
     
     func tapped() {
